@@ -13,7 +13,6 @@ local Timer = require 'lib.hump.timer'
 local train = {}
 
 function train:init()
-    train_timer = Timer.new()
 end
 
 function train:update(dt)

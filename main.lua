@@ -22,7 +22,7 @@ gamestate = {
 function love.load()
     assert(love.graphics.isSupported('canvas'), 'Your graphics card does not support canvases, sorry!')
 
-    --media = require 'media'
+    media = require 'media'
     --specs = require 'specs'
 
 
