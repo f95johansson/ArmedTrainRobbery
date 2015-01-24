@@ -21,26 +21,12 @@ function CheckCollision(x1,y1,w1,h1, x2,y2,w2,h2)
            y2 < y1+h1
 end
 
-local function movePlayer()
-    if love.keyboard.isDown('a') then
-        player.x = player.x - speed
-    elseif love.keyboard.isDown('d') then
-        player.x = player.x + speed
-    end
-    if love.keyboard.isDown('w') then
-        player.x = player.y + speed
-    elseif love.keyboard.isDown('s') then
-        player.x = player.y - speed
-    end
-    
-end
-
 local function moveNpc(x,y,npc)
     
 end
 
 function train:init()
-    local player = Entity:new (10,10, media.image.player)
+    self.player = Entity:new (10,10, media.image.player)
     self.entities = {}
 
     for name, dialog in pairs(dialogs) do
@@ -52,7 +38,7 @@ function train:init()
 end
 
 function train:update(dt)
-    movePlayer()
+    self:movePlayer()
 end
 
 function train:draw()
@@ -62,6 +48,20 @@ end
 function train:keypressed(key, isrepeat)
     self.focus = self.entities.ticket_man
     Gamestate.switch(gamestate.dialog)
+end
+
+function train:movePlayer()
+    if love.keyboard.isDown('a') then
+        self.player.x = self.player.x - speed
+    elseif love.keyboard.isDown('d') then
+        self.player.x = self.player.x + speed
+    end
+    if love.keyboard.isDown('w') then
+        self.player.x = self.player.y + speed
+    elseif love.keyboard.isDown('s') then
+        self.player.x = self.player.y - speed
+    end
+    
 end
 
 return train
