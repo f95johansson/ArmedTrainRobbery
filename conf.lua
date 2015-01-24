@@ -17,7 +17,7 @@ function love.conf(t)
     t.window.fullscreen = false
     t.window.fullscreentype = 'desktop'
     t.window.highdpi = false
-    t.window.resizable = true
+    t.window.resizable = false
     t.window.vsync = true
 
     -- Turn off some unused modules to optimize

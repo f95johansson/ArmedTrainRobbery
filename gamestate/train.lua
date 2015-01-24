@@ -28,7 +28,7 @@ local function moveNpc(x,y,npc)
 end
 
 function train:init()
-    self.player = Entity:new (100,100, media.image.player)
+    self.player = Entity:new(100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
     self.ticket_man = TicketMan:new(0, 239, media.image.ticket_man, ticket_character)
     self.entities = {} 
@@ -137,7 +137,7 @@ end
 function train:check_collision(x, y)
     local collision_map = media.image['mask' .. self.level]
     if x < 0 or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight() then
-        return true
+        return  true
     end
     local r, g, b, a = collision_map:getData():getPixel(x, y)
 
