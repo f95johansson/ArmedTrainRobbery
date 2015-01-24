@@ -16,6 +16,7 @@ local dialog = {}
 function dialog:init()
     self.character = Character:new()
     self.dialog_number = 1
+    self.selected = 1
 end
 
 function dialog:update(dt)
@@ -31,12 +32,43 @@ function dialog:drawDialog()
     love.graphics.setColor(100, 100, 100)
     local size = 100
     love.graphics.rectangle('fill', 0, love.graphics.getHeight()-100, love.graphics.getWidth(), 100)
+    
     love.graphics.setColor(255, 255, 255)
-    love.graphics.print(self.character.text[self.dialog_number], 0, love.graphics.getHeight()-100)
+    local question = self.character.text[self.dialog_number][1]
+    love.graphics.print(question, 0, 100)
+
+    for i = 1, #self.character.text[self.dialog_number][2] do
+        local answer = self.character.text[self.dialog_number][2][i]:sub(1, self.character.text[self.dialog_number][2][i]:find('#')-1)
+        if self.selected == i then
+            love.graphics.setColor(255, 255, 255)
+        else
+            love.graphics.setColor(200, 200, 200)
+        end
+        love.graphics.print(answer, 0, love.graphics.getHeight()-100 + 35*(i-1))
+    end
+
 end
 
 function dialog:keypressed(key, isrepeat)
-    if contains
+    if key == 'down' then
+        if self.character.text[self.dialog_number][2][self.selected+1] ~= nil then
+            self.selected = self.selected + 1
+        end
+    elseif key == 'up' then
+        if self.character.text[self.dialog_number][2][self.selected-1] ~= nil then
+            self.selected = self.selected - 1
+        end
+    elseif key == 'return' then 
+        -- Get hashtag number
+        print('selected', self.selected)
+        print(self.character.text[self.dialog_number][2][self.selected])
+        self.dialog_number = tonumber(
+            self.character.text[self.dialog_number][2][self.selected]:sub(
+                self.character.text[self.dialog_number][2][self.selected]:find('#')+1, 
+                #self.character.text[self.dialog_number][2][self.selected]))
+        -- Reset selected
+        self.selected = 1
+    end
 end
 
 return dialog
