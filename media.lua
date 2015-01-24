@@ -24,7 +24,8 @@ font = {
 },
 
 sound = {
-    walk = love.audio.newSource("sound/metal.mp3", "static"),
+    walk = love.audio.newSource("sound/wood.wav", "static"),
+    walk2 = love.audio.newSource("sound/wood.wav", "static"),
 },
 
 }
