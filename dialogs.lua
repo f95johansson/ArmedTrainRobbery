@@ -99,6 +99,21 @@ return {
         {"OH PLEASE, IVE BIN A GOOD BIN",
             {"I hate puns, burn!!!#0","Nice pun, burn!#0"}},
 
+    ticket = {
+        {"I'm sooooooooooo tiread of travelling with that stupid agent",
+            {"He isn't that stupid!","Is he an agent?","Preaching to the quire sister!"}},
+
+        {"Please.... I am merely a bin collecting paper. Don't do this to me...",
+            {"Proceed to put on fire#4"}},
+
+        {"Oh thank you, you are a kind soul",
+            {"Proceed to put on fire#4"}},
+
+        {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
+            {"There's nothing you can say now, it's bin a pleasure knowing you.#0","I will trash you#0","<Refuse to make a pun about such a serious situation>#5"}}}
+
+        {"OH PLEASE, IVE BIN A GOOD BIN",
+            {"I hate puns, burn!!!#0","Nice pun, burn!#0"}},
     
     ]]
 }
