@@ -40,6 +40,7 @@ function train:init()
             self.entities[name] = Entity:new(100, 100, media.image[name], character)
         end
     end
+    self.toPlay = true
 
     self.level = 2
 
@@ -99,6 +100,10 @@ function train:keypressed(key, isrepeat)
     end
 end
 
+function train:walkSound()
+    media.sound.walk:play()
+end
+
 function train:movePlayer(dt)
     if self.ticket_man.moving then
         return
@@ -116,7 +121,7 @@ function train:movePlayer(dt)
         new_y = self.player.y + speed*dt
     end
     if (self.player.x ~= new_x or self.player.y ~= new_y) and not media.sound.walk:isPlaying() then
-        media.sound.walk:play()
+        Timer.addPeriodic (0.3, function() media.sound.walk:play() end,1 )
     end
 
 
