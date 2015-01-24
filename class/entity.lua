@@ -1,4 +1,5 @@
-local class = require 'lib.mihump.timerddleclass'
+local class = require 'lib.middleclass'
+
 local Entity = class ('Entity')
 
 -- class body

@@ -23,7 +23,7 @@ function intro:draw()
 end
 
 function intro:keypressed(key, isrepeat)
-    Gamestate.switch(gamestate.game)
+    Gamestate.switch(gamestate.train)
 end
 
 return intro

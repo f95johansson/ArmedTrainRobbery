@@ -8,6 +8,7 @@
 local class = require 'lib.middleclass'
 local Gamestate = require 'lib.hump.gamestate'
 local Timer = require 'lib.hump.timer'
+local Entity = require 'class.Entity'
 
 -- Gamestate
 local train = {}
@@ -20,7 +21,7 @@ function CheckCollision(x1,y1,w1,h1, x2,y2,w2,h2)
            y2 < y1+h1
 end
 
-function movePlayer()
+local function movePlayer()
     if love.keyboard.isDown('a') then
         player.x = player.x - speed
     elseif love.keyboard.isDown('d') then
@@ -34,13 +35,12 @@ function movePlayer()
     
 end
 
-function moveNpc(x,y,npc)
+local function moveNpc(x,y,npc)
     
 end
 
 function train:init()
-    local entityClass = require 'class.entity'    
-    local player = entity:new (10,10, media.player)
+    local player = Entity:new (10,10, media.image.player)
 end
 
 function train:update(dt)

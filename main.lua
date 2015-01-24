@@ -16,7 +16,8 @@ require 'lib.useful'
 -- Gamestates:
 gamestate = {
     intro = require 'gamestate.intro',
-    game = require 'gamestate.dialog',
+    dialog = require 'gamestate.dialog',
+    train = require 'gamestate.train',
 }
 
 function love.load()
