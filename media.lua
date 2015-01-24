@@ -21,6 +21,10 @@ image = {
 font = {
     f18 = love.graphics.newFont('/resources/font/Gabriela-Regular.ttf', 18),
     f24 = love.graphics.newFont('/resources/font/Gabriela-Regular.ttf', 24),
-}
+},
+
+sound = {
+    walk = love.audio.newSource("sound/metal.mp3", "static"),
+},
 
 }

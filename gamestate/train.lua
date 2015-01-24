@@ -31,7 +31,8 @@ function train:init()
     self.player = Entity:new (100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
     self.ticket_man = TicketMan:new(0, 239, media.image.ticket_man, ticket_character)
-    self.entities = {}
+    self.entities = {} 
+    media.sound.walk:setVolume(0.6)
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' then
@@ -113,6 +114,9 @@ function train:movePlayer(dt)
         new_y = self.player.y - speed*dt
     elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
         new_y = self.player.y + speed*dt
+    end
+    if (self.player.x ~= new_x or self.player.y ~= new_y) and not media.sound.walk:isPlaying() then
+        media.sound.walk:play()
     end
 
 
