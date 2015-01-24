@@ -29,18 +29,19 @@ end
 
 function train:init()
     self.player = Entity:new (100,100, media.image.player)
-    local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, specs.nose_pos.ticket_man)
+    local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
     self.ticket_man = TicketMan:new(0, 239, media.image.ticket_man, ticket_character)
-    self.entities = {}
-    walk = love.audio.newSource("sound/metal.wav", "static") 
-    walk:setVolume(0.6)
+    self.entities = {} 
+    media.sound.walk:setVolume(0.6)
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' then
-            local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], specs.nose_pos[name])
-            self.entities[name] = Entity:new(100, 100, media.image[name], character)
+            local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name])
+            local x, y = unpack(specs.position[name])
+            self.entities[name] = Entity:new(x, y, media.image[name], character)
         end
     end
+    self.toPlay = true
 
     self.level = 2
 
@@ -100,6 +101,10 @@ function train:keypressed(key, isrepeat)
     end
 end
 
+function train:walkSound()
+    media.sound.walk:play()
+end
+
 function train:movePlayer(dt)
     if self.ticket_man.moving then
         return
@@ -108,32 +113,23 @@ function train:movePlayer(dt)
     local new_y = self.player.y
     if love.keyboard.isDown('a') or love.keyboard.isDown('left') then
         new_x = self.player.x - speed*dt
-        if (not (walk:isPlaying())) then
-            walk:play()
-        end 
     elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
         new_x = self.player.x + speed*dt
-        if (not (walk:isPlaying())) then
-            walk:play()
-        end 
     end
     if love.keyboard.isDown('w') or love.keyboard.isDown('up') then
         new_y = self.player.y - speed*dt
-        if (not (walk:isPlaying())) then
-            walk:play()
-        end 
     elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
         new_y = self.player.y + speed*dt
-        if (not (walk:isPlaying())) then
-            walk:play()
-        end 
+    end
+    if (self.player.x ~= new_x or self.player.y ~= new_y) and not media.sound.walk:isPlaying() then
+        Timer.addPeriodic (0.3, function() media.sound.walk:play() end,1 )
     end
 
 
     local collision = {}
     for i = 1, 16 do
         local angle = 2*math.pi/16 * (i-1)
-        table.insert(collision, self:check_collision(new_x + self.player.width/2*math.cos(angle), new_y + self.player.height/2*math.sin(angle)))
+        table.insert(collision, self:check_collision(new_x + (self.player.width/2-3)*math.cos(angle), new_y + (self.player.height/2-3)*math.sin(angle)))
     end
 
     if not table.contains(collision, true) then
