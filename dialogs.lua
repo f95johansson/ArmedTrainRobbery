@@ -18,7 +18,8 @@ return {
         {"Ok, that'll cost you 20$",
             {"20$!? I don't have that kind of money!#3"}},
         {"Well... I'll cut you a deal. If you can guess how many coffee beans are in the jar to the left of me I'll give you some free coffee.",
-            {"Easy, it's 27#4", "Obviously, the resolution to your bone of contention is the riposte that the proportion of integers of beans the vessel contains is merely the number thirtythree#5", "I would guess 33#4", "I have no idea#6"}},
+            {"Easy, it's 27#4", "Obviously, the resolution to your bone of contention is the riposte that the proportion of integers of beans the vessel contains is merely the 
+              number thirtythree#5", "I would guess 33#4", "I have no idea#6"}},
         {"Nope! That's the wrong answer!#0"},
         {"Correct! Here have some coffee!#0"},
         {"Well that's why you have to guess, stupid!#3"}}
@@ -31,7 +32,16 @@ return {
     closet = {
         {"Yikes! close the closet! We're hiding from the conductor!", {"Do you have room for one more?#2"}},
         {"Yes just hurry up and get in!", {"Ok!#0"}}
-    }
+    },
+
+    dustbin_level3 = {
+        {"Hello, please don't put me on fire. I have a wife and kids",
+            {"Put on fire#2"}},
+        {"Please.... I am merely a bin collecting paper. Don't do this to me...",
+            {"Proceed to put on fire#3"}},
+        {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
+            {"There's nothing you can say now, bin"}}}
+
     
     ]]
 }
