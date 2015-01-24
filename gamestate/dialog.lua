@@ -38,7 +38,7 @@ function dialog:setTimer()
 end
 
 function dialog:leave()
-    self.timer:cancel()
+    Timer.clear()
 end
 
 

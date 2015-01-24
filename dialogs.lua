@@ -1,10 +1,13 @@
 return {
     ticket_man = {
-        {'Hi, What do you want?', 
-            {'answer 1#1', 'answer 2#2'}
-        },
-        {'2', {'1#0'}},
-        {'3', {'2#1'}},
-        {'4', {'3#1'}},
+        {'Ticket please?', 
+            {'I lost my ticket#2', "I'm a freeloader#3"}},
+        {'You have two minutes to find it', {'Ok#0'}},
+        {'A freeloader?!', {'Yeah, problems#4'}},
+        {'I will kick you out', {'Game over#1'}},
+    },
+    agent = {
+        {'Question',
+            {'answer 1#1', 'answer 2#2'}},
     },
 }
