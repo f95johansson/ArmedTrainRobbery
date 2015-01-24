@@ -25,11 +25,37 @@ function dialog:enter(previous_state)
     self.selected = 1
     self.offset_x = 0
     self.offset_y = 0
+    self.offset_arm_l = 0
+    self.offset_arm_r = 0
     self.dialog_size = 100
 
     self:setTimer()
+    self:setArmTimerR()
+    self:setArmTimerL()
     self.pop_raius = love.graphics.getWidth()/2
     self.pop_timer = Timer.tween(.8, self, {pop_raius = 0}, 'linear')
+end
+
+function dialog:setArmTimerR()
+    local rotation = .4
+    if self.offset_arm_r > .1 then
+        rotation = -.4
+    end
+    self.arm_timer_r = Timer.tween(.7, self, {offset_arm_r = rotation}, 'in-out-cubic',
+                function()
+                    self:setArmTimerR()
+                end)
+end
+
+function dialog:setArmTimerL()
+    local rotation = .4
+    if self.offset_arm_l > .1 then
+        rotation = -.4
+    end
+    self.arm_timer_l = Timer.tween(.6, self, {offset_arm_l = rotation}, 'in-out-quad',
+                function()
+                    self:setArmTimerL()
+                end)
 end
 
 function dialog:setTimer()
@@ -41,6 +67,8 @@ end
 
 function dialog:leave()
     Timer.cancel(self.timer)
+    Timer.cancel(self.arm_timer_l)
+    Timer.cancel(self.arm_timer_r)
 end
 
 
@@ -109,8 +137,10 @@ function dialog:drawDialog()
 end
 
 function dialog:drawArmes(cx, cy)
-    love.graphics.draw(self.character.arm_l, cx, love.graphics.getHeight()-self.character.arm_l:getHeight())
-    love.graphics.draw(self.character.arm_r, cx, love.graphics.getHeight()-self.character.arm_l:getHeight())
+    local gap = 150
+    local pivit = {110, 407}
+    love.graphics.draw(self.character.arm_l, cx + self.offset_x*.5 + self.character.image:getWidth()/2 - self.character.arm_l:getWidth()/2 + gap + pivit[1], self.offset_y*.5 + love.graphics.getHeight()-self.character.arm_l:getHeight() + pivit[2], self.offset_arm_l, 1, 1, pivit[1], pivit[2])
+    love.graphics.draw(self.character.arm_r, cx + self.offset_x*.5 + self.character.image:getWidth()/2 - self.character.arm_r:getWidth()/2 - gap + pivit[1], self.offset_y*.5 + love.graphics.getHeight()-self.character.arm_l:getHeight() + pivit[2], self.offset_arm_r, 1, 1, pivit[1], pivit[2])
 end
 
 function dialog:keypressed(key, isrepeat)

@@ -3,7 +3,7 @@ return {
 image = {
     temp_background = love.graphics.newImage('/resources/temp_bg.png'),
     player = love.graphics.newImage('/resources/player.png'),
-    ticket_man = love.graphics.newImage('/resources/enemy.png'),
+    ticket_man = love.graphics.newImage('/resources/ticket_man.png'),
     ticket_man_dialog = love.graphics.newImage('/resources/ticket_man_dialog.png'),
     ticket_man_nose = love.graphics.newImage('/resources/ticket_man_nose.png'),
     ticket_man_left_arm = love.graphics.newImage('/resources/kondhandL.png'),
@@ -13,7 +13,7 @@ image = {
     question_bg = love.graphics.newImage('/resources/question_bg.png'),
     agent_left_arm = love.graphics.newImage('/resources/agentarmL.png'),
     agent_right_arm = love.graphics.newImage('/resources/agentarmR.png'),
-    agent = love.graphics.newImage('/resources/agentbod.png'),
+    agent = love.graphics.newImage('/resources/agent.png'),
     agent_dialog = love.graphics.newImage('/resources/agentbod.png'),
     agent_nose = love.graphics.newImage('/resources/agenteyes.png'),
 },

@@ -37,7 +37,8 @@ function train:init()
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' then
             local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name])
-            self.entities[name] = Entity:new(100, 100, media.image[name], character)
+            local x, y = unpack(specs.position[name])
+            self.entities[name] = Entity:new(x, y, media.image[name], character)
         end
     end
     self.toPlay = true
@@ -128,7 +129,7 @@ function train:movePlayer(dt)
     local collision = {}
     for i = 1, 16 do
         local angle = 2*math.pi/16 * (i-1)
-        table.insert(collision, self:check_collision(new_x + self.player.width/2*math.cos(angle), new_y + self.player.height/2*math.sin(angle)))
+        table.insert(collision, self:check_collision(new_x + (self.player.width/2-3)*math.cos(angle), new_y + (self.player.height/2-3)*math.sin(angle)))
     end
 
     if not table.contains(collision, true) then
