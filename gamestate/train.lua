@@ -8,7 +8,6 @@
 local class = require 'lib.middleclass'
 local Gamestate = require 'lib.hump.gamestate'
 local Timer = require 'lib.hump.timer'
-local media = require 'lib.media'
 
 -- Gamestate
 local train = {}
@@ -40,8 +39,8 @@ function moveNpc(x,y,npc)
 end
 
 function train:init()
-    local entityClass = require 'lib.entity'    
-    local player = entity:new (x,y, media.player)
+    local entityClass = require 'class.entity'    
+    local player = entity:new (10,10, media.player)
 end
 
 function train:update(dt)
