@@ -39,7 +39,7 @@ function train:init()
         if name ~= 'ticket_man' then
             local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name])
             local x, y = unpack(specs.position[name])
-            self.entities[name] = Entity:new(x, y, media.image[name], character)
+            self.entities[name] = Entity:new(x, y, media.image[name], character, specs.level[name])
         end
     end
 
@@ -82,7 +82,9 @@ function train:draw()
                             love.graphics.getHeight()/2-media.image['level' .. self.level]:getHeight()/2)
     love.graphics.draw(media.image['level' .. self.level], 0, 0)
     for _, entity in pairs(self.entities) do
-        entity:draw()
+        if entity.level == self.level then
+            entity:draw()
+        end 
     end
     self.player:draw()
     self.ticket_man:draw()
@@ -92,7 +94,7 @@ end
 function train:keypressed(key, isrepeat)
     if key == 'return' then
         for _, entity in pairs(self.entities) do
-            if math.distObjects(self.player, entity) < self.player.width/2 + entity.width/2 then
+            if math.distObjects(self.player, entity) < self.player.width/2 + entity.width/2 and entity.level == self.level then
                 self.focus = entity
                 Gamestate.switch(gamestate.dialog)
             end
