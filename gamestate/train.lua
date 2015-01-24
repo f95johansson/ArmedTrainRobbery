@@ -28,9 +28,10 @@ local function moveNpc(x,y,npc)
 end
 
 function train:init()
+    self.level = 2
     self.player = Entity:new (100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
-    self.ticket_man = TicketMan:new(0, 239, media.image.ticket_man, ticket_character)
+    self.ticket_man = TicketMan:new(100, 239, media.image.ticket_man, ticket_character)
     self.entities = {} 
     media.sound.walk:setVolume(0.6)
 
@@ -41,9 +42,7 @@ function train:init()
             self.entities[name] = Entity:new(x, y, media.image[name], character)
         end
     end
-    self.toPlay = true
 
-    self.level = 2
 
     self.focus = nil -- the character you want to talk to
     time = 2 * 60
@@ -125,7 +124,6 @@ function train:movePlayer(dt)
         Timer.addPeriodic (0.3, function() media.sound.walk:play() end,1 )
     end
 
-
     local collision = {}
     for i = 1, 16 do
         local angle = 2*math.pi/16 * (i-1)
@@ -141,9 +139,19 @@ end
 
 function train:check_collision(x, y)
     local collision_map = media.image['mask' .. self.level]
-    if x < 0 or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight() then
+
+    if x < 0  then --or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight()
+        -- Cafeteria
+        self.level=self.level-1
+        local map = media.image['level' .. self.level]
+        self.player.x = map:getWidth() - 50
+        return true
+    elseif x > collision_map:getWidth() then
+        self.level = self.level+1
+        self.player.x = 50
         return true
     end
+
     local r, g, b, a = collision_map:getData():getPixel(x, y)
 
     if r == 0 and g == 0 and b == 0 then
