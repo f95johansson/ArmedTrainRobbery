@@ -141,13 +141,13 @@ function train:check_collision(x, y)
     local collision_map = media.image['mask' .. self.level]
 
     if x < 0  then --or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight()
-        -- Cafeteria
-        self.level=self.level-1
+        self.level= math.clamp(1, self.level-1, 3)
         local map = media.image['level' .. self.level]
         self.player.x = map:getWidth() - 50
         return true
     elseif x > collision_map:getWidth() then
-        self.level = self.level+1
+        self.level = math.clamp(1, self.level+1, 3)
+        print(self.level)
         self.player.x = 50
         return true
     end
