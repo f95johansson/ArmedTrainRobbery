@@ -6,12 +6,13 @@ return {
         {'A freeloader?!', {'Yes#4'}},
         {'A FREELOADER?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
     },
-    --[[agent = {
-        {'Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.',
-            {'Hello, do you have a spare ticket?'},
-        {'No.'},
+    agent = {
+        {"Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.\n(Whispers smooth to himself)",
+            {'Hello, do you have a spare ticket?#2'}},
+        {'No.',
+            {'Bye#0'}},
     },
-    },
+    --[[
     waitress = {
         {"Hello! Can I get you something?",
             {"Yes I'd like to buy some coffee#2", "No thank you, I'm good!#0"}},

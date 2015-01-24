@@ -29,13 +29,13 @@ end
 
 function train:init()
     self.player = Entity:new (100,100, media.image.player)
-    local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, specs.nose_pos.ticket_man)
+    local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
     self.ticket_man = TicketMan:new(0, 239, media.image.ticket_man, ticket_character)
     self.entities = {}
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' then
-            local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], specs.nose_pos[name])
+            local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name])
             self.entities[name] = Entity:new(100, 100, media.image[name], character)
         end
     end

@@ -57,7 +57,10 @@ function dialog:draw()
     love.graphics.draw(self.character.image, cx + self.offset_x, cy + self.offset_y)
     love.graphics.draw(self.character.image_nose, cx + self.character.nose_pos[1] - self.character.image_nose:getWidth()/2 + self.offset_x,
                 cy + self.character.nose_pos[2] - self.character.image_nose:getHeight()/2 + self.offset_y)
+    
+    self:drawArmes(cx, cy)
     self:drawDialog()
+
 
     -- Transition effekt
     if self.pop_raius > 0 then
@@ -76,12 +79,18 @@ function dialog:drawDialog()
     love.graphics.setColor(255, 255, 255)
     -- Question
     local question = self.character.text[self.dialog_number][1]
-    local text_width = media.font.f18:getWidth(question)
-    local scale = text_width/(media.image.question_bg:getWidth()-240)
+    local text_width = media.font.f24:getWidth(question)
+    local scale = text_width/(media.image.question_bg:getWidth())
     love.graphics.setFont(media.font.f24)
     --Gradient background: love.graphics.draw(media.image.question_bg, text_width - media.image.question_bg:getWidth()/2, size +  13- media.image.question_bg:getHeight()/2 * scale, 0, scale)
     love.graphics.setColor(0, 0, 0, 200)
-    love.graphics.rectangle('fill', 25, size-5, text_width+100, media.font.f18:getHeight()+20, 10)
+    local number_of_n = 0
+    local index = 1
+    repeat
+        number_of_n = number_of_n + 1
+        index = question:find('\n', index+1)
+    until index == nil
+    love.graphics.rectangle('fill', 25, size-5, text_width+10, media.font.f24:getHeight()*number_of_n + 20, 10)
     love.graphics.setColor(255, 255, 255, 255)
     love.graphics.print(question, 30, size)
 
@@ -97,6 +106,11 @@ function dialog:drawDialog()
         love.graphics.print(answer, 15, love.graphics.getHeight()-self.dialog_size+5 + 30*(i-1))
     end
 
+end
+
+function dialog:drawArmes(cx, cy)
+    love.graphics.draw(self.character.arm_l, cx, love.graphics.getHeight()-self.character.arm_l:getHeight())
+    love.graphics.draw(self.character.arm_r, cx, love.graphics.getHeight()-self.character.arm_l:getHeight())
 end
 
 function dialog:keypressed(key, isrepeat)
