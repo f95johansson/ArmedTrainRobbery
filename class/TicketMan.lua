@@ -11,6 +11,8 @@ function TicketMan:initialize(x,y,img, character)
     self.width = self.image:getWidth()
     self.character = character
     self.moving = false
+    self.looking = false
+    self.seen = false
 
     self.path = {
         --{0, 239},
@@ -31,7 +33,7 @@ end
 function TicketMan:startWalking( path_number, step )
     self.moving = true
     step = step or 1
-    self.timer = Timer.tween(2, self, {x = self.path[step][1], y = self.path[step][2]}, 'linear',
+    self.timer = Timer.tween(1, self, {x = self.path[step][1], y = self.path[step][2]}, 'linear',
             function() 
                 if self.path[step+1] then
                     self:startWalking(path_number, step + 1)

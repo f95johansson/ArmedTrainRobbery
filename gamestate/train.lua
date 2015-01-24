@@ -56,7 +56,7 @@ function train:update(dt)
     self:movePlayer(dt)
 
     -- Check for collision line against player
-    if self.ticket_man.moving then
+    if self.ticket_man.moving and self.ticket_man.seen == false then
         local angle = math.angle(self.ticket_man.x, self.ticket_man.y, self.player.x, self.player.y)
         local collision = {}
         for i = 1, 40 do
@@ -66,7 +66,7 @@ function train:update(dt)
         end
         if not table.contains(collision, true) then
             self.focus = self.ticket_man
-            print(self.ticket_man.character)
+            self.ticket_man.seen = true
             Gamestate.switch(gamestate.dialog)
         end
     end
@@ -121,10 +121,12 @@ function train:movePlayer(dt)
         local angle = 2*math.pi/16 * (i-1)
         table.insert(collision, self:check_collision(new_x + self.player.width/2*math.cos(angle), new_y + self.player.height/2*math.sin(angle)))
     end
+
     if not table.contains(collision, true) then
         self.player.x = new_x
         self.player.y = new_y
     end
+
 end
 
 function train:check_collision(x, y)

@@ -9,6 +9,10 @@ image = {
     level2 = love.graphics.newImage('/resources/level2.png'),
     mask2 = love.graphics.newImage('/resources/mask2.png'),
     question_bg = love.graphics.newImage('/resources/question_bg.png'),
+    agentLeftArm = love.graphics.newImage('/resources/agentarmL.png'),
+    agentRightArm = love.graphics.newImage('/resources/agentarmR.png'),
+    agent = love.graphics.newImage('/resources/agentbod.png'),
+    agent_nose = love.graphics.newImage('/resources/agenteyes.png'),
 },
 
 font = {

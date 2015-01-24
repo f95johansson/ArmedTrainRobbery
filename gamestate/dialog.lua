@@ -40,7 +40,7 @@ function dialog:setTimer()
 end
 
 function dialog:leave()
-    Timer.clear()
+    Timer.cancel(self.timer)
 end
 
 
@@ -81,7 +81,7 @@ function dialog:drawDialog()
     love.graphics.setFont(media.font.f24)
     --Gradient background: love.graphics.draw(media.image.question_bg, text_width - media.image.question_bg:getWidth()/2, size +  13- media.image.question_bg:getHeight()/2 * scale, 0, scale)
     love.graphics.setColor(0, 0, 0, 200)
-    rounded_rectangle('fill', 25, size-5, text_width+100, media.font.f18:getHeight()+20, 10)
+    love.graphics.rectangle('fill', 25, size-5, text_width+100, media.font.f18:getHeight()+20, 10)
     love.graphics.setColor(255, 255, 255, 255)
     love.graphics.print(question, 30, size)
 
