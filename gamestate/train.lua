@@ -32,6 +32,8 @@ function train:init()
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, specs.nose_pos.ticket_man)
     self.ticket_man = TicketMan:new(0, 239, media.image.ticket_man, ticket_character)
     self.entities = {}
+    walk = love.audio.newSource("sound/metal.wav", "static") 
+    walk:setVolume(0.6)
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' then
@@ -106,13 +108,25 @@ function train:movePlayer(dt)
     local new_y = self.player.y
     if love.keyboard.isDown('a') or love.keyboard.isDown('left') then
         new_x = self.player.x - speed*dt
+        if (not (walk:isPlaying())) then
+            walk:play()
+        end 
     elseif love.keyboard.isDown('d') or love.keyboard.isDown('right') then
         new_x = self.player.x + speed*dt
+        if (not (walk:isPlaying())) then
+            walk:play()
+        end 
     end
     if love.keyboard.isDown('w') or love.keyboard.isDown('up') then
         new_y = self.player.y - speed*dt
+        if (not (walk:isPlaying())) then
+            walk:play()
+        end 
     elseif love.keyboard.isDown('s') or love.keyboard.isDown('down') then
         new_y = self.player.y + speed*dt
+        if (not (walk:isPlaying())) then
+            walk:play()
+        end 
     end
 
 
