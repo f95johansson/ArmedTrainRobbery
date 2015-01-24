@@ -23,7 +23,24 @@ function dialog:enter(previous_state)
     self.character = previous_state.focus.character
     self.dialog_number = 1
     self.selected = 1
+    self.offset_x = 0
+    self.offset_y = 0
+    self.dialog_size = 100
+
+    self:setTimer()
 end
+
+function dialog:setTimer()
+    self.timer = Timer.tween(.1, self, {offset_x = love.math.random(-2, 2), offset_y = love.math.random(-18, 18)}, 'in-out-quad',
+                function()
+                    self:setTimer()
+                end)
+end
+
+function dialog:leave()
+    self.timer:cancel()
+end
+
 
 function dialog:update(dt)
 end
@@ -31,17 +48,22 @@ end
 function dialog:draw()
     love.graphics.draw(media.image[self.character.background], 0, 0)
 
+    local cx = love.graphics.getWidth()-self.character.image:getWidth()
+    local cy = love.graphics.getHeight()-self.character.image:getHeight() - self.dialog_size + 10
+    love.graphics.draw(self.character.image, cx + self.offset_x, cy + self.offset_y)
+    love.graphics.draw(self.character.image_nose, cx + self.character.nose_pos[1] - self.character.image_nose:getWidth()/2 + self.offset_x,
+                cy + self.character.nose_pos[2] - self.character.image_nose:getHeight()/2 + self.offset_y)
     self:drawDialog()
 end
 
 function dialog:drawDialog()
     love.graphics.setColor(100, 100, 100)
-    local size = 100
-    love.graphics.rectangle('fill', 0, love.graphics.getHeight()-100, love.graphics.getWidth(), 100)
+    local size = self.dialog_size
+    love.graphics.rectangle('fill', 0, love.graphics.getHeight()-size, love.graphics.getWidth(), size)
     
     love.graphics.setColor(255, 255, 255)
     local question = self.character.text[self.dialog_number][1]
-    love.graphics.print(question, 0, 100)
+    love.graphics.print(question, 20, size)
 
     for i = 1, #self.character.text[self.dialog_number][2] do
         local answer = self.character.text[self.dialog_number][2][i]:sub(1, self.character.text[self.dialog_number][2][i]:find('#')-1)

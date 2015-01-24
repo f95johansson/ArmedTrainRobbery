@@ -107,11 +107,11 @@ function table.merge(t1, t2)
 end
 
 -- Requeries first and second to be objects with x, y, width and height attributes
-function check_collision(first, second)
+--[[function check_collision(first, second)
     if second.x - second.width/2 < first.x < second.x + second.width/2 and second.y - second.height/2 < first.y < second.y +second.height/2 then
         return True
     end
-end
+end]]
 
 function within( x, y, x0, y0, width, height )
     if x0 < x and x < x0 + width and y0 < y and y < y0 + height then

@@ -24,7 +24,7 @@ function love.load()
     assert(love.graphics.isSupported('canvas'), 'Your graphics card does not support canvases, sorry!')
 
     media = require 'media'
-    --specs = require 'specs'
+    specs = require 'specs'
     dialogs = require 'dialogs'
 
 
