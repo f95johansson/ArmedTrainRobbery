@@ -27,6 +27,8 @@ function love.load()
     specs = require 'specs'
     dialogs = require 'dialogs'
 
+    time = 0
+
 
     Gamestate.registerEvents()
     Gamestate.switch(gamestate.intro)
@@ -38,12 +40,20 @@ function love.focus(f) end
 
 function love.update( dt )
     Timer.update(dt)
+    time = time - dt
 end
 
 function love.draw()
     --love.graphics.setFont(media.font.b14)
     love.graphics.setColor(255, 255, 255, 255)
-    love.graphics.print("Current FPS: "..tostring(love.timer.getFPS( )), 10, 10)
+    --love.graphics.print("Current FPS: "..tostring(love.timer.getFPS( )), 10, 10)
+
+    love.graphics.setFont(media.font.f18)
+    if time < 0 then
+        love.graphics.print('Time: 0:00', 10, 10)
+    else
+        love.graphics.print('Time: ' .. tostring(math.floor(time/60)) .. ':' .. tostring(time % 60):sub(1, 2), 10, 10)
+    end
 end
 
 function love.keypressed( key, isrepeat )

@@ -28,10 +28,12 @@ function dialog:enter(previous_state)
     self.dialog_size = 100
 
     self:setTimer()
+    self.pop_raius = love.graphics.getWidth()/2
+    self.pop_timer = Timer.tween(.8, self, {pop_raius = 0}, 'linear')
 end
 
 function dialog:setTimer()
-    self.timer = Timer.tween(.1, self, {offset_x = love.math.random(-2, 2), offset_y = love.math.random(-18, 18)}, 'in-out-quad',
+    self.timer = Timer.tween(.1, self, {offset_x = love.math.random(-2, 2), offset_y = love.math.random(-10, 10)}, 'in-out-quad',
                 function()
                     self:setTimer()
                 end)
@@ -46,6 +48,8 @@ function dialog:update(dt)
 end
 
 function dialog:draw()
+    love.graphics.setFont(media.font.f18)
+
     love.graphics.draw(media.image[self.character.background], 0, 0)
 
     local cx = love.graphics.getWidth()-self.character.image:getWidth()
@@ -54,6 +58,14 @@ function dialog:draw()
     love.graphics.draw(self.character.image_nose, cx + self.character.nose_pos[1] - self.character.image_nose:getWidth()/2 + self.offset_x,
                 cy + self.character.nose_pos[2] - self.character.image_nose:getHeight()/2 + self.offset_y)
     self:drawDialog()
+
+    -- Transition effekt
+    if self.pop_raius > 0 then
+        local func = function() love.graphics.circle('fill', love.graphics.getWidth()/2, love.graphics.getHeight()/2, self.pop_raius, self.pop_raius/3) end
+        love.graphics.setStencil(func)
+        self.previous_state:draw()
+        love.graphics.setStencil()
+    end
 end
 
 function dialog:drawDialog()
@@ -62,9 +74,19 @@ function dialog:drawDialog()
     love.graphics.rectangle('fill', 0, love.graphics.getHeight()-size, love.graphics.getWidth(), size)
     
     love.graphics.setColor(255, 255, 255)
+    -- Question
     local question = self.character.text[self.dialog_number][1]
-    love.graphics.print(question, 20, size)
+    local text_width = media.font.f18:getWidth(question)
+    local scale = text_width/(media.image.question_bg:getWidth()-240)
+    love.graphics.setFont(media.font.f24)
+    --Gradient background: love.graphics.draw(media.image.question_bg, text_width - media.image.question_bg:getWidth()/2, size +  13- media.image.question_bg:getHeight()/2 * scale, 0, scale)
+    love.graphics.setColor(0, 0, 0, 200)
+    rounded_rectangle('fill', 25, size-5, text_width+100, media.font.f18:getHeight()+20, 10)
+    love.graphics.setColor(255, 255, 255, 255)
+    love.graphics.print(question, 30, size)
 
+    love.graphics.setFont(media.font.f18)
+    -- Answers
     for i = 1, #self.character.text[self.dialog_number][2] do
         local answer = self.character.text[self.dialog_number][2][i]:sub(1, self.character.text[self.dialog_number][2][i]:find('#')-1)
         if self.selected == i then
@@ -72,7 +94,7 @@ function dialog:drawDialog()
         else
             love.graphics.setColor(200, 200, 200)
         end
-        love.graphics.print(answer, 0, love.graphics.getHeight()-100 + 35*(i-1))
+        love.graphics.print(answer, 15, love.graphics.getHeight()-self.dialog_size+5 + 30*(i-1))
     end
 
 end
