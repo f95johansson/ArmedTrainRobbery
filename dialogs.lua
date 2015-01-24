@@ -3,7 +3,7 @@ return {
         {'Hello, Tickets please!', 
             {"It's in the other coupé#2", "I don't have one#3"}},
         {'You have two minutes to find it', {'Ok#0'}},
-        {'How do you intend to pay?!', {'I thought maybe I could ride for free#4',"With cash#5"}},
+        {'Do you intend to pay for one then?!', {"With cash#5","I thought maybe I could ride for free#4"}},
         {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
         {"You don't seem to have any money!", {"About that..can I ride for free instead#4","My ticket is in the other coupé#2"}},
     },
@@ -36,37 +36,68 @@ return {
         {"Hello! Can I get you something?",
             {"Yes I'd like to buy some coffee#2", "No thank you, I'm good!#0"}},
         {"Ok, that'll cost you 20$",
-            {"20$!? I don't have that kind of money!#3"}},
+            {"20$!? I don't have that kind of money!#3","I don't need anything#0"}},
 
-        {"Well... I'll cut you a deal. If you can guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee.",
-            {"Easy, it's 27#4", "I would guess 33#4", "I have no idea#6","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtythree#5"}},
+        {"Well... I'll cut you a deal. If you can guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee if you guess correctly.",
+            {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},
 
-        {"Nope! That's the wrong answer!#0"},
-        {"Correct! Here have some coffee!#0"},
-        {"Well that's why you have to guess, stupid!#3"}}
+        {"Nope! That's the wrong answer, try again!\nHow many beans are there in the jar",{"I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5""}},
+        {"Correct! Here have some coffee!"{"Oh thank you#0"}},
+        {"Well that's why you have to guess, stupid!"{"I am stupid,bye#0","Ok#7"}}
+        
+          {"Can you guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee if you guess correctly.",
+            {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},   
+
     },
     dustbin = {
         {"Hello, please don't put me on fire. I have a wife and kids",
-            {"I would if I could, dustbin. Sadly I don't have any matches.#2"}}
-        {"...#0",{"Now if you excuse me I have a ticket to catch!#0"}}
+            {"I would if I could, dustbin. Sadly I don't have any matches.#2","I would never do such a horrific thing#3"}}
+        {"You frighten me arcinist!",{"Now if you excuse me I have a ticket to catch!#0"}}
+        {"Some people are monsters.#0",{"Not me, I'm nice and stuff, bye#0"}}
     },
     closet = {
         {"Yikes! close the closet! We're hiding from the conductor!", {"Do you have room for one more?#2","Oh, lets close that door then.#0","Whats your favourite pizza?#3"}},
+        
         {"Yes just hurry up and get in!", {"Ok!#0"}}
 
-        {"There is no time to talk about pizza", {"Ok!#0"}}
+        {"There is no time to talk about pizza", {"Ok I'll close the door!#0","Why aren't there any toilets on this train?#4","Sometime if I look up the star it
+        reminds me that we are so\nsmall.#6",""}}
+
+        {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
+            {"Ok I'll leave you alone!#0","But there are several beds in this train#4","Sometime if I look up the star it
+            reminds me that we are so\nsmall.#7",""}}
+
+        {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
+            {"Ok I'll leave you alone!#0","Can I get in?#1","But there are several beds in this train#6","Sometime if I look up the star it
+            reminds me that we are so\nsmall.#7"}}
+
+        {"That is a very good point, if I let you in would you please stop talking!",
+            {"I'll go away instead.#0","Yes please#1"}}
+
+        {"What, this is no time for poetry, please close the door",
+            {"If you don't accept my poetry you don't accept me. Bye!#0","Can I come inside#1","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}}
+
+        {".......Come into the closet or go away",
+            {"I'll go away.#0","I'll come in#1"}}  
     }
 
     },
 
     dustbin_level3 = {
         {"Hello, please don't put me on fire. I have a wife and kids",
-            {"Put on fire#2"}},
-        {"Please.... I am merely a bin collecting paper. Don't do this to me...",
-            {"Proceed to put on fire#3"}},
-        {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
-            {"There's nothing you can say now, bin#0"}}}
+            {"I won't put you on fire (put on fire)#3","You will burn (put on fire)#2"}},
 
+        {"Please.... I am merely a bin collecting paper. Don't do this to me...",
+            {"Proceed to put on fire#4"}},
+
+        {"Oh thank you, you are a kind soul",
+            {"Proceed to put on fire#4"}},
+
+        {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
+            {"There's nothing you can say now, it's bin a pleasure knowing you.#0","I will trash you#0","<Refuse to make a pun about such a serious situation>#5"}}}
+
+        {"OH PLEASE, IVE BIN A GOOD BIN",
+            {"I hate puns, burn!!!#0","Nice pun, burn!#0"}},
 
     
     ]]
