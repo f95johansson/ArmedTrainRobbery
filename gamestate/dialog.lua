@@ -28,6 +28,8 @@ function dialog:enter(previous_state)
     self.offset_arm_l = 0
     self.offset_arm_r = 0
     self.dialog_size = 100
+    self.question_size = 0
+    self.question_timer = Timer.tween(#self.character.text[self.dialog_number][1]/18, self, {question_size = #self.character.text[self.dialog_number][1]}, 'linear')
 
     self:setTimer()
     self:setArmTimerR()
@@ -106,7 +108,7 @@ function dialog:drawDialog()
     
     love.graphics.setColor(255, 255, 255)
     -- Question
-    local question = self.character.text[self.dialog_number][1]
+    local question = self.character.text[self.dialog_number][1]:sub(1, self.question_size+1)
     local text_width = media.font.f24:getWidth(question)
     local scale = text_width/(media.image.question_bg:getWidth())
     love.graphics.setFont(media.font.f24)
@@ -163,6 +165,9 @@ function dialog:keypressed(key, isrepeat)
 
         if self.dialog_number == 0 then
             Gamestate.switch(self.previous_state)
+        else
+            self.question_size = 1
+            self.question_timer = Timer.tween(#self.character.text[self.dialog_number][1]/18, self, {question_size = #self.character.text[self.dialog_number][1]}, 'linear')
         end
     end
 end

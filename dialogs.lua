@@ -17,7 +17,7 @@ return {
     agent = {
 
         {"Can I help you? By the way I'm Agent Vincent mc Ni...\nI mean, I'm Smith, John Smith.",
-            {'Hello, do you have a spare ticket?#2','I totally know about the microfilm.#3','Are you afraid of anything?#5'},
+            {'Hello, do you have a spare ticket?#2','I totally know about the microfilm.#3','Are you afraid of anything?#5'}},
 
         {'No my ticket lies firmly on the table with my name on it.',
             {"Bye.#0"}},
@@ -26,11 +26,9 @@ return {
         {"Im not! I'm the best agent you'll ever..I mean I'm not an agent",
             {"Do you have a spare ticket#2","Are you afraid of anything?#5","Bye#0"}},
         {"An agent can't be afraid, especially not fire..\n...I'm not an agent though",
-            {"Do you have a spare ticket#2","The paperbin is on fire right now#6";"Bye#0"}}
+            {"Do you have a spare ticket#2","The paperbin is on fire right now#6","Bye#0"}},
         {"Aaaah, wait the paperbin is not on fire you meany!",
-            {"You are the worst agent#4";"Bye#0"}}
-
-
+            {"You are the worst agent#4", "Bye#0"}},
 
     },
 
