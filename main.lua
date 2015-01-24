@@ -25,6 +25,7 @@ function love.load()
 
     media = require 'media'
     --specs = require 'specs'
+    dialogs = require 'dialogs'
 
 
     Gamestate.registerEvents()

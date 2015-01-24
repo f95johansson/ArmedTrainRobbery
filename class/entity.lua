@@ -4,13 +4,13 @@ local Entity = class ('Entity')
 
 -- class body
     
-    function Entity:initialize(x,y,img)
+    function Entity:initialize(x,y,img, character)
         self.x = x
         self.y = y
         self.image = img
         self.height = self.image:getHeight()
         self.width = self.image:getWidth()
-        
+        self.character = character
     end
 
     function Entity:draw()

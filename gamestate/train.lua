@@ -7,7 +7,7 @@
 -- Libraries
 local class = require 'lib.middleclass'
 local Gamestate = require 'lib.hump.gamestate'
-local Timer = require 'lib.hump.timer'
+local Character = require 'class.Character'
 local Entity = require 'class.Entity'
 
 -- Gamestate
@@ -41,6 +41,14 @@ end
 
 function train:init()
     local player = Entity:new (10,10, media.image.player)
+    self.entities = {}
+
+    for name, dialog in pairs(dialogs) do
+        local character = Character:new(dialog)
+        self.entities[name] = Entity:new(100, 100, media.image[name], character)
+    end
+
+    self.focus = nil -- the character you want to talk to
 end
 
 function train:update(dt)
@@ -52,7 +60,8 @@ function train:draw()
 end
 
 function train:keypressed(key, isrepeat)
-    Gamestate.switch(gamestate.intro)
+    self.focus = self.entities.ticket_man
+    Gamestate.switch(gamestate.dialog)
 end
 
 return train

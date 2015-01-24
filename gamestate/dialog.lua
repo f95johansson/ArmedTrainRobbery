@@ -14,7 +14,13 @@ local Character = require 'class.Character'
 local dialog = {}
 
 function dialog:init()
-    self.character = Character:new()
+    self.dialog_number = 1
+    self.selected = 1
+end
+
+function dialog:enter(previous_state)
+    self.previous_state = previous_state
+    self.character = previous_state.focus.character
     self.dialog_number = 1
     self.selected = 1
 end
@@ -60,14 +66,16 @@ function dialog:keypressed(key, isrepeat)
         end
     elseif key == 'return' then 
         -- Get hashtag number
-        print('selected', self.selected)
-        print(self.character.text[self.dialog_number][2][self.selected])
         self.dialog_number = tonumber(
             self.character.text[self.dialog_number][2][self.selected]:sub(
                 self.character.text[self.dialog_number][2][self.selected]:find('#')+1, 
                 #self.character.text[self.dialog_number][2][self.selected]))
         -- Reset selected
         self.selected = 1
+
+        if self.dialog_number == 0 then
+            Gamestate.switch(self.previous_state)
+        end
     end
 end
 
