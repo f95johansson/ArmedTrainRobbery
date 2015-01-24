@@ -7,8 +7,9 @@ return {
         {'A FREELOADER?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
     },
     --[[agent = {
-        {'Question',
-            {'answer 1#1', 'answer 2#2'}},
+        {'Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.',
+            {'Hello, do you have a spare ticket?'},
+        {'No.'},
     },
     },
     waitress = {
@@ -21,5 +22,16 @@ return {
         {"Nope! That's the wrong answer!#0"},
         {"Correct! Here have some coffee!#0"},
         {"Well that's why you have to guess, stupid!#3"}}
-    },]]
+    },
+    dustbin = {
+        {"Hello, please don't put me on fire. I have a wife and kids",
+            {"I would if I could, dustbin. Sadly I don't have any matches.#2"}}
+        {"...",{"Now if you excuse me I have a ticket to catch!#0}}
+    },
+    closet = {
+        {"Yikes! close the closet! We're hiding from the conductor!", {"Do you have room for one more?#2"}},
+        {"Yes just hurry up and get in!", {"Ok!#0"}}
+    }
+    
+    ]]
 }
