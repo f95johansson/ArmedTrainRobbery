@@ -92,7 +92,7 @@ function train:update(dt)
         Timer.add(time, function() 
                 local x, y = unpack(specs.ticket_man_paths[2][1])
                 local ticket_character = Character:new(dialogs.ticket_man2, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
-                self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[2]) 
+                self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticket_man_paths[2]) 
                 self.ticket_man:startWalking(w)
             end)
 
