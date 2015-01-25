@@ -71,6 +71,12 @@ font = {
 sound = {
     walk = love.audio.newSource("sound/wood.wav", "static"),
     walk2 = love.audio.newSource("sound/wood.wav", "static"),
+    main_theme = love.audio.newSource("sound/main.m4a", "static"),
+    intro_theme = love.audio.newSource("sound/intro.m4a", "static"),
+    agent_theme = love.audio.newSource("sound/agent.m4a", "static"),
+    conductor_theme = love.audio.newSource("sound/conductor.m4a", "static"),
+    driver_theme = love.audio.newSource("sound/driver.m4a", "static"),
+
 },
 
 }
