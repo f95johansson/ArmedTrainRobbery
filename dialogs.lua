@@ -2,7 +2,7 @@ return {
     ticket_man = {
         {'Hello, Tickets please!', 
             {"It's in the other coupé#2", "I don't have one#3"}},
-        {'You have one minutes to find it', {'Ok#0'}},
+        {'You have one minute to find it', {'Ok#0'}},
         {'Do you intend to pay for one then?!', {"With cash#5","I thought maybe I could ride for free#4"}},
         {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Oh darn it#-2'}},
         {"You don't seem to have any money!", {"About that..can I ride for free instead#4","My ticket is in the other coupé#2"}},
