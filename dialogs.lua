@@ -32,7 +32,7 @@ return {
 
     },
 
-    --[[chef = {
+    chef = {
         {"Hello! Can I get you something?",
             {"Yes I'd like to buy some coffee#2", "No thank you, I'm good!#0"}},
         {"Ok, that'll cost you 20$",
@@ -41,15 +41,15 @@ return {
         {"Well... I'll cut you a deal. If you can guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee if you guess correctly.",
             {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},
 
-        {"Nope! That's the wrong answer, try again!\nHow many beans are there in the jar",{"I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5""}},
-        {"Correct! Here have some coffee!"{"Oh thank you#0"}},
-        {"Well that's why you have to guess, stupid!"{"I am stupid,bye#0","Ok#7"}}
+        {"Nope! That's the wrong answer, try again!\nHow many beans are there in the jar",{"I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},
+        {"Correct! Here have some coffee!",{"Oh thank you#0"}},
+        {"Well that's why you have to guess, stupid!",{"I am stupid,bye#0","Ok#7"}},
         
           {"Can you guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee if you guess correctly.",
             {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},   
 
     },
-    dustbin = {
+    --[[ dustbin = {
         {"Hello, please don't put me on fire. I have a wife and kids",
             {"I would if I could, dustbin. Sadly I don't have any matches.#2","I would never do such a horrific thing#3"}}
         {"You frighten me arcinist!",{"Now if you excuse me I have a ticket to catch!#0"}}
