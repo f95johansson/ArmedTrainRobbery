@@ -184,12 +184,24 @@ function dialog:keypressed(key, isrepeat)
         self.selected = 1
 
         if self.dialog_number == 0 then
+            for i=1,3 do
+                media.sound['voice' .. love.math.random(2)]:stop()
+            end
             Gamestate.switch(self.previous_state)
         elseif self.dialog_number == -1 then
+            for i=1,3 do
+                media.sound['voice' .. love.math.random(2)]:stop()
+            end
             self.character.action()
             Gamestate.switch(self.previous_state)
         else
             self.question_size = 1
+            if not(self.character.voice) then
+                for i=1,3 do
+                    media.sound['voice' .. love.math.random(2)]:stop()
+                end
+                media.sound['voice' .. love.math.random(3)]:play()
+            end 
             self.question_timer = Timer.tween(#self.character.text[self.dialog_number][1]/18, self, {question_size = #self.character.text[self.dialog_number][1]}, 'linear')
         end
     end
