@@ -31,6 +31,11 @@ function dialog:enter(previous_state)
     self.dialog_size = 100
     self.question_size = 0
     self.question_timer = Timer.tween(#self.character.text[self.dialog_number][1]/18, self, {question_size = #self.character.text[self.dialog_number][1]}, 'linear')
+    if not(self.character.voice) then
+        media.sound['voice' .. love.math.random(3)]:play()
+    else    
+        self.character.voice:play()
+    end 
 
     self.paralax = {Layer:new(0, 0, media.image.paralax4, 220), Layer:new(0, 0, media.image.paralax3, 200),
                     Layer:new(0, 0, media.image.paralax2, 180), Layer:new(0, 0, media.image.paralax1, 160)}
