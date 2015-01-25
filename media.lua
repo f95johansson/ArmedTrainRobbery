@@ -35,6 +35,7 @@ image = {
     chef_right_arm = love.graphics.newImage('/resources/kokhandR.png'),
     chef_dialog = love.graphics.newImage('/resources/kok.png'),
     chef_nose = love.graphics.newImage('/resources/kokhatt.png'),
+    chef_background = love.graphics.newImage('/resources/chef_background.png'),
 
     trash_can = love.graphics.newImage('/resources/trash_can.png'),
     trash_can_dialog = love.graphics.newImage('/resources/pappersbody.png'),
@@ -59,6 +60,7 @@ image = {
     closet_left_arm = love.graphics.newImage('/resources/garderob_left.png'),
     closet_right_arm = love.graphics.newImage('/resources/garderob_right.png'),
     closet_dialog = love.graphics.newImage('/resources/garderobare.png'),
+    closet_background = love.graphics.newImage('/resources/closet_background.png'),
 
     go_hide = love.graphics.newImage('/resources/gohide_icon.png'),
     go_hide_nose = nil,
@@ -71,12 +73,14 @@ image = {
     driver_left_arm = love.graphics.newImage('/resources/1x1.png'),
     driver_right_arm = love.graphics.newImage('/resources/1x1.png'),
     driver_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
+    driver_background = love.graphics.newImage('/resources/driver_background.png'),
 
     driver2 = love.graphics.newImage('/resources/gohide_icon.png'),
     driver2_nose = nil,
     driver2_left_arm = love.graphics.newImage('/resources/1x1.png'),
     driver2_right_arm = love.graphics.newImage('/resources/1x1.png'),
     driver2_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
+    driver2_background = love.graphics.newImage('/resources/driver_background.png'),
 
     bird_man = love.graphics.newImage('/resources/gohide_icon.png'),
     bird_man_nose = nil,
