@@ -8,10 +8,13 @@ image = {
     paralax3 = love.graphics.newImage('/resources/bak1c.png'),
     paralax4 = love.graphics.newImage('/resources/bak1d.png'),
 
-    iparalax1 = love.graphics.newImage('/resources/intro0.png'),
-    iparalax2 = love.graphics.newImage('/resources/intro1.png'),
-    iparalax3 = love.graphics.newImage('/resources/intro2.png'),
-    iparalax4 = love.graphics.newImage('/resources/intro3.png'),
+    iparalax0 = love.graphics.newImage('/resources/intro4.png'),
+    iparalax1 = love.graphics.newImage('/resources/intro3.png'),
+    iparalax2 = love.graphics.newImage('/resources/intro2.png'),
+    iparalax3 = love.graphics.newImage('/resources/intro1.png'),
+    iparalax4 = love.graphics.newImage('/resources/intro0.png'),
+
+    introTrain = love.graphics.newImage('/resources/introTrain.png'),
 
     grass_bg = love.graphics.newImage('/resources/grass.png'),
     level2 = love.graphics.newImage('/resources/level2.png'),

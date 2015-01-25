@@ -15,8 +15,8 @@ local intro = {}
 
 function intro:init()
     media['sound'].intro_theme:play()
-    self.paralax = {Layer:new(0, 0, media.image.paralax4, 400), Layer:new(0, 0, media.image.paralax3, 380),
-                    Layer:new(0, 0, media.image.paralax2, 360), Layer:new(0, 0, media.image.paralax1, 340)}
+    self.paralax = {Layer:new(0, 0, media.image.iparalax4, 340), Layer:new(0, 0, media.image.iparalax3, 360),
+                    Layer:new(0, 0, media.image.iparalax2, 380), Layer:new(0, 0, media.image.iparalax1, 400),Layer:new(0, 0, media.image.iparalax0, 400)}
 end
 
 function intro:update(dt)
@@ -29,6 +29,8 @@ function intro:draw()
     for _, paralax in ipairs(self.paralax) do
         paralax:draw()
     end
+
+    love.graphics.draw(media.image.introTrain, 0, 0)
 
     love.graphics.setFont(media.font.f48)
     love.graphics.setColor(0, 0, 0)

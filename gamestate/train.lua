@@ -57,7 +57,7 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 20--60
+    time = 120
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
