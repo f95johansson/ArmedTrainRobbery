@@ -90,15 +90,16 @@ function train:update(dt)
         end
     end
 
-    if self.ticket_man and self.ticket_man.moving == false then
+    if self.ticket_man and self.ticket_man.moving == false and not self.ticket_man_timer then
         self.ticket_man = nil
-        Timer.add(time, function() 
+        self.ticket_man_timer = Timer.add(time, function() 
                 local x, y = unpack(specs.ticket_man_paths[2][1])
                 local ticket_character = Character:new(dialogs.ticket_man2, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
                 self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticket_man_paths[2]) 
                 self.ticket_man:startWalking(w)
             end)
-
+    elseif self.ticket_man and self.ticket_man.moving == false then
+        self.ticket_man = nil
     end
 end
 
