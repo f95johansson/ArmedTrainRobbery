@@ -103,7 +103,7 @@ function dialog:draw()
     for _, paralax in ipairs(self.paralax) do
         paralax:draw()
     end
-    love.graphics.draw(media.image[self.character.background], 0, 0)
+    love.graphics.draw(self.character.background, 0, 0)
 
     local cx = love.graphics.getWidth()-self.character.image:getWidth()
     local cy = love.graphics.getHeight()-self.character.image:getHeight() - self.dialog_size + 10

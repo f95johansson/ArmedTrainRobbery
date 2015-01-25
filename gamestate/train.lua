@@ -44,11 +44,12 @@ function train:init()
             print(name)
             local action = actions[name]
             local character
+            local background = media.image[name] or media.image.background
             if media.sound[name .. '_theme'] then
-                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. '_theme'])
+                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. '_theme'], background)
                 character.song:setLooping(true)
             else
-                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent)
+                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, nil, background)
             end
             local x, y = unpack(specs.position[name])
             self.entities[name] = Entity:new(x, y, media.image[name], character, specs.level[name])
