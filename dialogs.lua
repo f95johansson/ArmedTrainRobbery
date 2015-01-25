@@ -45,7 +45,7 @@ return {
             {"Hmm very interesting...bye#0","You seem boring, bye.#0"}},
 
         {"I'm not confused beacuse i'm old, there are sounds coming from the closet.",
-            {"Hmm very interesting...bye#0","Sure....","You seem boring#5, bye.#0"}},
+            {"Hmm very interesting...bye#0","Sure....#5","You seem boring#5", "bye.#0"}},
 
         {"Yes i'm sure, it would be rude to go up there and talk to the person hiding",
             {"Hmm maybe i'll go talk...bye#0","Yeah, super rude#0"}},
@@ -108,11 +108,7 @@ return {
             {"If you don't accept my poetry you don't accept me. Bye!#0","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}},
 
         {".......Come into the closet or go away",
-<<<<<<< HEAD
-            {"I'll go away.#0","I'll come in#-1"}},
-=======
             {"I'll go away.#0","I'll come in#2"}},
->>>>>>> FETCH_HEAD
 
         {"No way this is my hiding place",
             {"I'll go away.#0","Whats your favourite pizza?#3"}}, 

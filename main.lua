@@ -47,7 +47,11 @@ function love.focus(f) end
 
 function love.update( dt )
     Timer.update(dt)
-    time = time - dt
+    if hidden == true then
+        time = time - dt*8
+    else
+        time = time - dt
+    end
 end
 
 function love.draw()

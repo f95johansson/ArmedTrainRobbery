@@ -41,6 +41,7 @@ function train:init()
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' and name ~= 'ticket_man2' and name ~= 'ticket_man3' then
+            print(name)
             local action = actions[name]
             local character
             if media.sound[name .. '_theme'] then
@@ -56,7 +57,7 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 20--2 * 60
+    time = 60
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
