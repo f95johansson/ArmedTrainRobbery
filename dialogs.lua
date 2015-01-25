@@ -116,7 +116,7 @@ return {
             {"20$!? I don't have that kind of money!#3","I don't need anything#0"}},
 
         {"Well... I'll cut you a deal. If you can guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee if you guess correctly.",
-            {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte that the proportion\nof integers of beans the vessel containsm is merely the number thirtyfour#5"}},
+            {"Easy, it's 27#4","I have no idea.#6","Obviously, the resolution to your bone of contention is the riposte that the proportion\nof integers of beans the vessel containsm is merely the number thirtyfour#5"}},
 
         {"Nope! That's the wrong answer, try again!\nHow many beans are there in the jar",{"I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},
         {"Correct! Here have some coffee!",{"Oh thank you#-1"}},
