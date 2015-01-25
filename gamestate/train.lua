@@ -34,8 +34,8 @@ function train:init()
     self.level = 2
     self.player = Entity:new (100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man, media.sound['ticket_man_theme'])
-    local x, y = unpack(specs.ticker_man_paths[1][1])
-    self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[1])
+    local x, y = unpack(specs.ticket_man_paths[1][1])
+    self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticket_man_paths[1])
     self.entities = {} 
     media.sound.walk:setVolume(0.6)
 
