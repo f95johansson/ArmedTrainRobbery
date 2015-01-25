@@ -36,12 +36,36 @@ image = {
     chef_dialog = love.graphics.newImage('/resources/kok.png'),
     chef_nose = love.graphics.newImage('/resources/kokhatt.png'),
 
-    trashcan = love.graphics.newImage('/resources/trash_can.png'),
+    trash_can = love.graphics.newImage('/resources/trash_can.png'),
+    trash_can_dialog = love.graphics.newImage('/resources/pappersbody.png'),
+    trash_can_nose = nil,
+    trash_can_left_arm = love.graphics.newImage('/resources/pappersarm.png'),
+    trash_can_right_arm = love.graphics.newImage('/resources/pappersarm.png'),
+
+    trash_can2 = love.graphics.newImage('/resources/trash_can.png'),
+    trash_can2_dialog = love.graphics.newImage('/resources/pappersbody.png'),
+    trash_can2_nose = nil,
+    trash_can2_left_arm = love.graphics.newImage('/resources/pappersarm.png'),
+    trash_can2_right_arm = love.graphics.newImage('/resources/pappersarm.png'),
+
+    ticket = love.graphics.newImage('/resources/ticket_icon.png'),
+    ticket_left_arm = love.graphics.newImage('/resources/ticket_arm.png'),
+    ticket_nose = nil,
+    ticket_right_arm = love.graphics.newImage('/resources/ticket_arm.png'),
+    ticket_dialog = love.graphics.newImage('/resources/ticket.png'),
+
+    closet = love.graphics.newImage('/resources/closet_icon.png'),
+    closet_nose = love.graphics.newImage('/resources/closet_nose.png'),
+    closet_left_arm = love.graphics.newImage('/resources/closet_arm_left.png'),
+    closet_right_arm = love.graphics.newImage('/resources/closet_arm_right.png'),
+    closet_dialog = love.graphics.newImage('/resources/closet.png'),
+
 },
 
 font = {
     f18 = love.graphics.newFont('/resources/font/Gabriela-Regular.ttf', 18),
     f24 = love.graphics.newFont('/resources/font/Gabriela-Regular.ttf', 24),
+    f48 = love.graphics.newFont('/resources/font/Gabriela-Regular.ttf', 48),
 },
 
 sound = {

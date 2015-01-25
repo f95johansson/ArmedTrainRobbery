@@ -74,7 +74,7 @@ function love.keypressed( key, isrepeat )
             love.audio.setVolume(1)
         end
 
-    elseif key == 'f' then love.window.setFullscreen( not love.window.getFullscreen( ) )
+    --elseif key == 'f' then love.window.setFullscreen( not love.window.getFullscreen( ) )
     elseif key == 'k' and love.keyboard.isDown('rgui') then
         debug.debug()
     end

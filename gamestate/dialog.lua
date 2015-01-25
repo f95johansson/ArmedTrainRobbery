@@ -102,9 +102,11 @@ function dialog:draw()
     local cx = love.graphics.getWidth()-self.character.image:getWidth()
     local cy = love.graphics.getHeight()-self.character.image:getHeight() - self.dialog_size + 10
     love.graphics.draw(self.character.image, cx + self.offset_x, cy + self.offset_y)
-    love.graphics.draw(self.character.image_nose, cx + self.character.nose_pos[1] - self.character.image_nose:getWidth()/2 + self.offset_x,
+    if self.character.image_nose then
+        love.graphics.draw(self.character.image_nose, cx + self.character.nose_pos[1] - self.character.image_nose:getWidth()/2 + self.offset_x,
                 cy + self.character.nose_pos[2] - self.character.image_nose:getHeight()/2 + self.offset_y)
-    
+    end
+
     self:drawArmes(cx, cy)
     self:drawDialog()
 
