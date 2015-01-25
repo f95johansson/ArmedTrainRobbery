@@ -41,10 +41,9 @@ function train:init()
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' and name ~= 'ticket_man2' and name ~= 'ticket_man3' then
-            print(name)
             local action = actions[name]
             local character
-            local background = media.image[name].background or media.image.background
+            local background = media.image[name .. 'background'] or media.image.background
             if media.sound[name .. '_theme'] then
                 character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. '_theme'], background)
                 character.song:setLooping(true)
