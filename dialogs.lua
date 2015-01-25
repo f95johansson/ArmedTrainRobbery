@@ -66,8 +66,6 @@ return {
         {"<turnes around and you take the matches>",
             {"Bye#-1"}},
 
-
-
     },
 
     driver = {
@@ -98,7 +96,16 @@ return {
             {"Ok#0","What's the safe code?#4"}},
 
         {"I'm to tired to tell you... Please get some coffee for me!",
-            {"Here you go#-1"}},
+            {"Here you go#6","Say please#5","Don't feel like giving you the coffee, bye#0"}},
+
+        {"Pleeeeaaaaase!",
+            {"Here you go#6","Say please again#5","Don't feel like giving you the coffee, bye#0"}},
+
+        {"Oh thank you, feel a little bit more awake.\nThe sade code is 'unarmed'",
+            {"Thanks bye#0","Say please again#7"}},
+
+        {"Why? you already gave me the coffee, however the password for the safe is 'unarmed'",
+            {"Thanks bye#0"}},
     },
 
     chef = {
