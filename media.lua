@@ -86,7 +86,7 @@ image = {
     bird_man_nose = nil,
     bird_man_left_arm = love.graphics.newImage('/resources/1x1.png'),
     bird_man_right_arm = love.graphics.newImage('/resources/1x1.png'),
-    bird_man_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
+    bird_man_dialog = love.graphics.newImage('/resources/ftant.png'),
 
 },
 

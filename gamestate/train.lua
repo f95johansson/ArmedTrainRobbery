@@ -45,10 +45,10 @@ function train:init()
             local character
             local background = media.image[name .. '_background'] or media.image.background
             if media.sound[name .. '_theme'] then
-                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. '_theme'], background)
+                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. '_theme'], background, nil, action)
                 character.song:setLooping(true)
             else
-                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, nil, background)
+                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, nil, background, nil, action)
             end
             local x, y = unpack(specs.position[name])
             self.entities[name] = Entity:new(x, y, media.image[name], character, specs.level[name])
@@ -57,7 +57,7 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 60
+    time = 20--60
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
