@@ -76,7 +76,7 @@ return {
             {"If you don't accept my poetry you don't accept me. Bye!#0","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}},
 
         {".......Come into the closet or go away",
-            {"I'll go away.#0","I'll come in#1"}},
+            {"I'll go away.#0","I'll come in#-1"}},
 
         {"No way this is my hiding place",
             {"I'll go away.#0","Whats your favourite pizza?#3"}}, 
