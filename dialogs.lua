@@ -45,10 +45,28 @@ return {
             {"Hmm very interesting...bye#0","You seem boring, bye.#0"}},
 
         {"I'm not confused beacuse i'm old, there are sounds coming from the closet.",
-            {"Hmm very interesting...bye#0","Sure....","You seem boring#5, bye.#0"}},
+            {"Hmm very interesting...bye#0","Sure....#5","You seem boring, bye.#0"}},
 
         {"Yes i'm sure, it would be rude to go up there and talk to the person hiding",
             {"Hmm maybe i'll go talk...bye#0","Yeah, super rude#0"}},
+
+    },
+
+    bird_man = {
+
+        {"Hello young chicken.",
+            {"Do you have any matches#2","I'm not a chicken, bye#0"}},
+
+        {"Yes but children shouldn't be playing with matches. \nThey are in my backpocket",
+            {"What's that behind you!!!#3","Look an elephant!!#3","Is that a grey goose outside the window!!#4"}},
+
+        {"I'm not so easily fooled young chicken.",
+            {"What's that behind you!!!#3","Look an elephant!!#3","Is that a grey goose outside the window!!#4"}},
+
+        {"<turnes around and you take the matches>",
+            {"Bye#-1"}},
+
+
 
     },
 
@@ -65,10 +83,22 @@ return {
 
         {"I'm to tired to tell you... Please get some coffee for me!",
             {"Ok#0"}},
+    },
 
 
+    driver2 = {
 
+        {"...Hello..goodmorning..",
+            {"You look sleepy#2","Goodmorning to you aswell#3"}},
 
+        {"Well the ticket man keeps waking me up to ask what the code for the safe is.",
+            {"Isn't it dangrous to sleep when you're driving a train!#3","Oh i won't bother you then#0","What's the safe code?#4"}},
+
+        {"No, we don't really do anything,\nI just glued this steering wheel on to look important.",
+            {"Ok#0","What's the safe code?#4"}},
+
+        {"I'm to tired to tell you... Please get some coffee for me!",
+            {"Here you go#-1"}},
     },
 
     chef = {
