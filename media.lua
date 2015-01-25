@@ -8,14 +8,6 @@ image = {
     paralax3 = love.graphics.newImage('/resources/bak1c.png'),
     paralax4 = love.graphics.newImage('/resources/bak1d.png'),
     grass_bg = love.graphics.newImage('/resources/grass.png'),
-
-
-    player = love.graphics.newImage('/resources/player.png'),
-    ticket_man = love.graphics.newImage('/resources/ticket_man.png'),
-    ticket_man_dialog = love.graphics.newImage('/resources/ticket_man_dialog.png'),
-    ticket_man_nose = love.graphics.newImage('/resources/ticket_man_nose.png'),
-    ticket_man_left_arm = love.graphics.newImage('/resources/kondhandL.png'),
-    ticket_man_right_arm = love.graphics.newImage('/resources/kondhandR.png'),
     level2 = love.graphics.newImage('/resources/level2.png'),
     mask2 = love.graphics.newImage('/resources/mask2.png'),
     level1 = love.graphics.newImage('/resources/level1.png'),
@@ -23,11 +15,26 @@ image = {
     level3 = love.graphics.newImage('/resources/level3.png'),
     mask3 = love.graphics.newImage('/resources/mask3.png'),
     question_bg = love.graphics.newImage('/resources/question_bg.png'),
+
+    player = love.graphics.newImage('/resources/player.png'),
+    
+    ticket_man = love.graphics.newImage('/resources/ticket_man.png'),
+    ticket_man_dialog = love.graphics.newImage('/resources/ticket_man_dialog.png'),
+    ticket_man_nose = love.graphics.newImage('/resources/ticket_man_nose.png'),
+    ticket_man_left_arm = love.graphics.newImage('/resources/kondhandL.png'),
+    ticket_man_right_arm = love.graphics.newImage('/resources/kondhandR.png'),
+
     agent_left_arm = love.graphics.newImage('/resources/agentarmL.png'),
     agent_right_arm = love.graphics.newImage('/resources/agentarmR.png'),
     agent = love.graphics.newImage('/resources/agent.png'),
     agent_dialog = love.graphics.newImage('/resources/agentbod.png'),
     agent_nose = love.graphics.newImage('/resources/agenteyes.png'),
+
+    chef = love.graphics.newImage('/resources/kok_icon.png'),
+    chef_left_arm = love.graphics.newImage('/resources/kokhandL.png'),
+    chef_right_arm = love.graphics.newImage('/resources/kokhandR.png'),
+    chef_dialog = love.graphics.newImage('/resources/kok.png'),
+    chef_nose = love.graphics.newImage('/resources/kokhatt.png'),
 },
 
 font = {

@@ -23,11 +23,17 @@ gamestate = {
 function love.load()
     assert(love.graphics.isSupported('canvas'), 'Your graphics card does not support canvases, sorry!')
 
+    -- Globals: 
+    
     media = require 'media'
     specs = require 'specs'
     dialogs = require 'dialogs'
 
     time = 0
+
+    hidden = false
+    matches = false
+    coffee = false
 
 
     Gamestate.registerEvents()

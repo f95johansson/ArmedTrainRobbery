@@ -32,7 +32,7 @@ return {
 
     },
 
-    --[[waitress = {
+    --[[chef = {
         {"Hello! Can I get you something?",
             {"Yes I'd like to buy some coffee#2", "No thank you, I'm good!#0"}},
         {"Ok, that'll cost you 20$",

@@ -13,6 +13,8 @@ local TicketMan = require 'class.TicketMan'
 local Layer = require 'class.Layer'
 local Timer = require 'lib.hump.timer'
 
+local actions = require 'actions'
+
 -- Gamestate
 local train = {}
 local speed = 150
@@ -38,7 +40,8 @@ function train:init()
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' then
-            local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name])
+            local action = actions[name]
+            local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent)
             local x, y = unpack(specs.position[name])
             self.entities[name] = Entity:new(x, y, media.image[name], character, specs.level[name])
         end
