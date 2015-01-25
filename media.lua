@@ -55,10 +55,10 @@ image = {
     ticket_dialog = love.graphics.newImage('/resources/ticket.png'),
 
     closet = love.graphics.newImage('/resources/closet_icon.png'),
-    closet_nose = love.graphics.newImage('/resources/closet_nose.png'),
-    closet_left_arm = love.graphics.newImage('/resources/closet_arm_left.png'),
-    closet_right_arm = love.graphics.newImage('/resources/closet_arm_right.png'),
-    closet_dialog = love.graphics.newImage('/resources/closet.png'),
+    closet_nose = nil,
+    closet_left_arm = love.graphics.newImage('/resources/garderob_left.png'),
+    closet_right_arm = love.graphics.newImage('/resources/garderob_right.png'),
+    closet_dialog = love.graphics.newImage('/resources/garderobare.png'),
 
 },
 

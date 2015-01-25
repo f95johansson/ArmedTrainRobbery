@@ -12,7 +12,7 @@ return {
         {'Of course not, I work here', {'I work here to#3'}},
         {"No you don't", 
             {"No YOU don't#0",
-            "Ok, you cought me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
+            "Ok, you caught me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
     },
     agent = {
         {"Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.\n(Whispers smooth to himself)",
