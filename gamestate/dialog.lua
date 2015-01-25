@@ -28,7 +28,7 @@ function dialog:enter(previous_state)
     self.offset_y = 0
     self.offset_arm_l = 0
     self.offset_arm_r = 0
-    self.dialog_size = 100
+    self.dialog_size = 150
     self.question_size = 0
     self.question_timer = Timer.tween(#self.character.text[self.dialog_number][1]/18, self, {question_size = #self.character.text[self.dialog_number][1]}, 'linear')
     if not(self.character.voice) then
