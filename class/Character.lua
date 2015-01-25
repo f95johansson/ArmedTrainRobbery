@@ -2,7 +2,7 @@ local class = require 'lib.middleclass'
 
 local Character = class('Character')
 
-function Character:initialize(dialog, image, nose_image, arm_l, arm_r, nose_pos, agent)
+function Character:initialize(dialog, image, nose_image, arm_l, arm_r, nose_pos, action)
     self.background = 'background'
     self.image = image
     self.image_nose = nose_image

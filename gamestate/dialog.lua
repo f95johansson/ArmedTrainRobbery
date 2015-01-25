@@ -176,7 +176,7 @@ function dialog:keypressed(key, isrepeat)
         if self.dialog_number == 0 then
             Gamestate.switch(self.previous_state)
         elseif self.dialog_number == -1 then
-            self.character:action()
+            self.character.action()
             Gamestate.switch(self.previous_state)
         else
             self.question_size = 1
