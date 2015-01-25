@@ -14,6 +14,7 @@ return {
         driver = {280,256},
         ticket = {150,124},
         bird_lover = {450,100},
+        go_hide = {443, 107},
     },
     level = {
         agent = 1,
@@ -23,6 +24,7 @@ return {
         driver = 3,
         ticket = 1,
         bird_lover = 2,
+        go_hide = 2,
     },
     ticket_man_paths = {
         {

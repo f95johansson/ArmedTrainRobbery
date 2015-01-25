@@ -41,6 +41,7 @@ function train:init()
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' and name ~= 'ticket_man2' and name ~= 'ticket_man3' then
+            print(name)
             local action = actions[name]
             local character
             if media.sound[name .. '_theme'] then
@@ -56,7 +57,7 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 20--2 * 60
+    time = 60
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
@@ -74,7 +75,6 @@ function train:update(dt)
 
     -- Check for collision line against player
     if self.ticket_man and not hidden and self.ticket_man.moving and self.ticket_man.seen == false then
-        print(1)
         local angle = math.angle(self.ticket_man.x, self.ticket_man.y, self.player.x, self.player.y)
         local collision = {}
         for i = 1, 100 do
@@ -117,6 +117,11 @@ function train:draw()
     if self.ticket_man then
         self.ticket_man:draw()
     end
+    for _, entity in pairs(self.entities) do
+        if math.distObjects(self.player, entity) < self.player.width/2 + entity.width/2 and entity.level == self.level then
+            love.graphics.print('Press Enter', self.player.x, self.player.y - 35)
+        end
+    end
     love.graphics.pop()
     -- See the trains on the side
     if self.level ~= 1 then
@@ -127,6 +132,8 @@ function train:draw()
         love.graphics.draw (media.image['level' .. (self.level+1)], love.graphics.getWidth()-100, 
                             love.graphics.getHeight()/2-media.image['level' .. (self.level+1)]:getHeight()/2)
     end 
+
+
 end
 
 function train:keypressed(key, isrepeat)

@@ -60,6 +60,18 @@ image = {
     closet_right_arm = love.graphics.newImage('/resources/garderob_right.png'),
     closet_dialog = love.graphics.newImage('/resources/garderobare.png'),
 
+    go_hide = love.graphics.newImage('/resources/gohide_icon.png'),
+    go_hide_nose = nil,
+    go_hide_left_arm = love.graphics.newImage('/resources/gohide_left.png'),
+    go_hide_right_arm = love.graphics.newImage('/resources/gohide_right.png'),
+    go_hide_dialog = love.graphics.newImage('/resources/gohide.png'),
+
+    driver = love.graphics.newImage('/resources/gohide_icon.png'),
+    driver_nose = nil,
+    driver_left_arm = love.graphics.newImage('/resources/1x1.png'),
+    driver_right_arm = love.graphics.newImage('/resources/1x1.png'),
+    driver_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
+
 },
 
 font = {

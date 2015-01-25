@@ -2,23 +2,17 @@ return {
     ticket_man = {
         {'Hello, Tickets please!', 
             {"It's in the other coupé#2", "I don't have one#3"}},
-        {'You have two minutes to find it', {'Ok#0'}},
+        {'You have one minutes to find it', {'Ok#0'}},
         {'Do you intend to pay for one then?!', {"With cash#5","I thought maybe I could ride for free#4"}},
         {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
         {"You don't seem to have any money!", {"About that..can I ride for free instead#4","My ticket is in the other coupé#2"}},
     },
     ticket_man2 = {
-        {'Do you have the ticket?', {'Do you have the ticket?#2'}},
-        {'Of course not, I work here', {'I work here to#3'}},
+        {'Do you have the ticket?', {'Do YOU have the ticket?#2'}},
+        {'Of course not, I work here', {'I work here to#3',"Oh I thought you really liked "}},
         {"No you don't", 
             {"No YOU don't#0",
             "Ok, you caught me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
-    },
-    agent = {
-        {"Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.\n(Whispers smooth to himself)",
-            {'Hello, do you have a spare ticket?#2'}},
-        {'No.',
-            {'Bye#0'}},
     },
 
     agent = {
@@ -37,6 +31,81 @@ return {
         {"Aaaah, wait the paperbin is not on fire you meany!",
             {"You are the worst agent#4", "Bye#0"}},
 
+    },
+
+    go_hide = {
+
+        {"Good morning little person.",
+            {"Hello, hows it hanging#2","Whats up?#2","You seem boring, bye.#0"}},
+
+        {"I'm fine little person, altough slightly confused.",
+            {"How come you're confused.#3","It's alright to be confused when you're old#4","Enough talking, bye.#0"}},
+        
+        {"There are strange sounds coming from the locker in the corner.",
+            {"Hmm very interesting...bye#0","You seem boring, bye.#0"}},
+
+        {"I'm not confused beacuse i'm old, there are sounds coming from the closet.",
+            {"Hmm very interesting...bye#0","Sure....#5","You seem boring#5", "bye.#0"}},
+
+        {"Yes i'm sure, it would be rude to go up there and talk to the person hiding",
+            {"Hmm maybe i'll go talk...bye#0","Yeah, super rude#0"}},
+
+    },
+
+    bird_man = {
+
+        {"Hello young chicken.",
+            {"Do you have any matches#2","I'm not a chicken, bye#0"}},
+
+        {"Yes but children shouldn't be playing with matches. \nThey are in my backpocket",
+            {"What's that behind you!!!#3","Look an elephant!!#3","Is that a grey goose outside the window!!#4"}},
+
+        {"I'm not so easily fooled young chicken.",
+            {"What's that behind you!!!#3","Look an elephant!!#3","Is that a grey goose outside the window!!#4"}},
+
+        {"<turnes around and you take the matches>",
+            {"Bye#-1"}},
+
+    },
+
+    driver = {
+
+        {"...Hello..goodmorning..",
+            {"You look sleepy#2","Goodmorning to you aswell#3"}},
+
+        {"Well the ticket man keeps waking me up to ask what the code for the safe is.",
+            {"Isn't it dangrous to sleep when you're driving a train!#3","Oh i won't bother you then#0","What's the safe code?#4"}},
+
+        {"No, we don't really do anything,\nI just glued this steering wheel on to look important.",
+            {"Ok#0","What's the safe code?#4"}},
+
+        {"I'm to tired to tell you... Please get some coffee for me!",
+            {"Ok#0"}},
+    },
+
+
+    driver2 = {
+
+        {"...Hello..goodmorning..",
+            {"You look sleepy#2","Goodmorning to you aswell#3"}},
+
+        {"Well the ticket man keeps waking me up to ask what the code for the safe is.",
+            {"Isn't it dangrous to sleep when you're driving a train!#3","Oh i won't bother you then#0","What's the safe code?#4"}},
+
+        {"No, we don't really do anything,\nI just glued this steering wheel on to look important.",
+            {"Ok#0","What's the safe code?#4"}},
+
+        {"I'm to tired to tell you... Please get some coffee for me!",
+            {"Here you go#6","Say please#5","Don't feel like giving you the coffee, bye#0"}},
+
+        {"Pleeeeaaaaase!",
+            {"Here you go#6","Say please again#5","Don't feel like giving you the coffee, bye#0"}},
+
+        {"Oh thank you, feel a little bit more awake.\nThe sade code is 'unarmed'",
+            {"Thanks bye#0","Say please again#7"}},
+
+        {"Why? you already gave me the coffee, however the password for the safe is 'unarmed'",
+            {"Thanks bye#0"}},
     },
 
     chef = {
@@ -59,7 +128,7 @@ return {
     closet = {
         {"Yikes! close the closet! I'm hiding from the conductor!", {"Oh, lets close that door then.#0","Whats your favourite pizza?#3"}},
         
-        {"Yes just hurry up and get in!", {"Ok!#-1"}},
+        {"Just hurry up and get in!", {"Ok!#-1"}},
 
         {"There is no time to talk about pizza", {"Ok I'll close the door!#0","Why aren't there any toilets on this train?#4","Sometimes when I look up at the stars\n      I'm reminded of how small we are.#6"}},
 
@@ -70,13 +139,13 @@ return {
             {"Ok I'll leave you alone!#0","But there are several beds in this train#6","Sometime if I look up the star it\nreminds me that we are so\nsmall.#7"}},
 
         {"That is a very good point, if I let you in would you please stop talking!",
-            {"I'll go away instead.#0","Yes please#1"}},
+            {"I'll go away instead.#0","Yes please#2"}},
 
         {"What, this is no time for poetry, please close the door",
             {"If you don't accept my poetry you don't accept me. Bye!#0","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}},
 
         {".......Come into the closet or go away",
-            {"I'll go away.#0","I'll come in#1"}},
+            {"I'll go away.#0","I'll come in#2"}},
 
         {"No way this is my hiding place",
             {"I'll go away.#0","Whats your favourite pizza?#3"}}, 
@@ -102,10 +171,10 @@ return {
             {"Proceed to put on fire#4"}},
 
         {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
-            {"There's nothing you can say now, it's bin a pleasure knowing you.#0","I will trash you#0","<Refuse to make a pun about such a serious situation>#5"}},
+            {"There's nothing you can say now, it's bin a pleasure knowing you.#-1","I will trash you#-1","<Refuse to make a pun about such a serious situation>#5"}},
 
         {"OH PLEASE, IVE BIN A GOOD BIN",
-            {"I hate puns, burn!!!#0","Nice pun, burn!#0"}},
+            {"I hate puns, burn!!!#-1","Nice pun, burn!#-1"}},
     },
 
     ticket = {
