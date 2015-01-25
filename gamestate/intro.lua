@@ -13,6 +13,7 @@ local Timer = require 'lib.hump.timer'
 local intro = {}
 
 function intro:init()
+    media['sound'].intro_theme:play()
 end
 
 function intro:update(dt)
@@ -23,6 +24,7 @@ function intro:draw()
 end
 
 function intro:keypressed(key, isrepeat)
+    media['sound'].intro_theme:stop()
     Gamestate.switch(gamestate.train)
 end
 
