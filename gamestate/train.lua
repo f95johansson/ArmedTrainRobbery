@@ -164,7 +164,11 @@ function train:movePlayer(dt)
     local collision = {}
     for i = 1, 16 do
         local angle = 2*math.pi/16 * (i-1)
-        table.insert(collision, self:check_collision(new_x + (self.player.width/2-3)*math.cos(angle), new_y + (self.player.height/2-3)*math.sin(angle), true))
+        local c = self:check_collision(new_x + (self.player.width/2-3)*math.cos(angle), new_y + (self.player.height/2-3)*math.sin(angle), true)
+        table.insert(collision, c)
+        if c == true then
+            break
+        end
     end
 
     if not table.contains(collision, true) then
@@ -178,12 +182,12 @@ function train:check_collision(x, y, player)
     local collision_map = media.image['mask' .. self.level]
 
     if x < 0 and player then --or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight()
-        self.level= math.clamp(1, self.level-1, 3)
+        self.level= self.level-1
         local map = media.image['level' .. self.level]
         self.player.x = map:getWidth() - 50
         return true
     elseif x > collision_map:getWidth() and player then
-        self.level = math.clamp(1, self.level+1, 3)
+        self.level = self.level+1
         print(self.level)
         self.player.x = 50
         return true
