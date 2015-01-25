@@ -6,11 +6,12 @@ return {
     },
     position = {
         agent = {80,123},
-        trashcan = {440,170},
+        trash_can = {440,170},
+        trash_can2 = {440,170},
         chef = {424,112},
         closet = {54,256},
         driver = {280,256},
-        ticker = {114,95},
+        ticket = {150,124},
         bird_lover = {450,100},
     },
     level = {
@@ -22,7 +23,7 @@ return {
         ticket = 1,
         bird_lover = 2,
     },
-    ticker_man_paths = {
+    ticket_man_paths = {
         {
             {654, 242},
             {299, 239},

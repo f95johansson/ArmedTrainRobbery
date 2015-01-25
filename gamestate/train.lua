@@ -34,15 +34,16 @@ function train:init()
     self.level = 2
     self.player = Entity:new (100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
-    local x, y = unpack(specs.ticker_man_paths[1][1])
-    self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[1])
+    local x, y = unpack(specs.ticket_man_paths[1][1])
+    self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticket_man_paths[1])
     self.entities = {} 
     media.sound.walk:setVolume(0.6)
 
     for name, dialog in pairs(dialogs) do
-        if name ~= 'ticket_man' and name ~= 'ticket_man2' then
+        if name ~= 'ticket_man' and name ~= 'ticket_man2' and name ~= 'ticket_man3' then
             local action = actions[name]
             local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], action)
+            print(name)
             local x, y = unpack(specs.position[name])
             self.entities[name] = Entity:new(x, y, media.image[name], character, specs.level[name])
         end
@@ -69,7 +70,7 @@ function train:update(dt)
     if self.ticket_man and self.ticket_man.moving and self.ticket_man.seen == false then
         local angle = math.angle(self.ticket_man.x, self.ticket_man.y, self.player.x, self.player.y)
         local collision = {}
-        for i = 1, 40 do
+        for i = 1, 100 do
             local x = (self.ticket_man.x - self.player.x)*math.cos(angle)
             local y = (self.ticket_man.y - self.player.y)*math.sin(angle)
             table.insert(collision, train:check_collision( self.ticket_man.x+x, self.ticket_man.y+y))
@@ -84,7 +85,7 @@ function train:update(dt)
     if self.ticket_man and self.ticket_man.moving == false then
         self.ticket_man = nil
         Timer.add(time, function() 
-                local x, y = unpack(specs.ticker_man_paths[2][1])
+                local x, y = unpack(specs.ticket_man_paths[2][1])
                 local ticket_character = Character:new(dialogs.ticket_man2, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
                 self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[2]) 
                 self.ticket_man:startWalking(w)

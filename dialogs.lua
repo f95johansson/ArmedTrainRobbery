@@ -56,41 +56,38 @@ return {
             {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},   
 
     },
-    --[[ dustbin = {
-        {"Hello, please don't put me on fire. I have a wife and kids",
-            {"I would if I could, dustbin. Sadly I don't have any matches.#2","I would never do such a horrific thing#3"}}
-        {"You frighten me arcinist!",{"Now if you excuse me I have a ticket to catch!#0"}}
-        {"Some people are monsters.#0",{"Not me, I'm nice and stuff, bye#0"}}
-    },
     closet = {
         {"Yikes! close the closet! We're hiding from the conductor!", {"Do you have room for one more?#2","Oh, lets close that door then.#0","Whats your favourite pizza?#3"}},
         
-        {"Yes just hurry up and get in!", {"Ok!#0"}}
+        {"Yes just hurry up and get in!", {"Ok!#0"}},
 
-        {"There is no time to talk about pizza", {"Ok I'll close the door!#0","Why aren't there any toilets on this train?#4","Sometime if I look up the star it
-        reminds me that we are so\nsmall.#6",""}}
-
-        {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
-            {"Ok I'll leave you alone!#0","But there are several beds in this train#4","Sometime if I look up the star it
-            reminds me that we are so\nsmall.#7",""}}
+        {"There is no time to talk about pizza", {"Ok I'll close the door!#0","Why aren't there any toilets on this train?#4","Sometimes when I look up at the stars I'm reminded of how small we are#6"}},
 
         {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
-            {"Ok I'll leave you alone!#0","Can I get in?#1","But there are several beds in this train#6","Sometime if I look up the star it
-            reminds me that we are so\nsmall.#7"}}
+            {"Ok I'll leave you alone!#0","But there are several beds in this train#4","Sometime if I look up the star it\nreminds me that we are so\nsmall.#7"}},
+
+        {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
+            {"Ok I'll leave you alone!#0","Can I get in?#1","But there are several beds in this train#6","Sometime if I look up the star it\nreminds me that we are so\nsmall.#7"}},
 
         {"That is a very good point, if I let you in would you please stop talking!",
-            {"I'll go away instead.#0","Yes please#1"}}
+            {"I'll go away instead.#0","Yes please#1"}},
 
         {"What, this is no time for poetry, please close the door",
-            {"If you don't accept my poetry you don't accept me. Bye!#0","Can I come inside#1","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}}
+            {"If you don't accept my poetry you don't accept me. Bye!#0","Can I come inside#1","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}},
 
         {".......Come into the closet or go away",
-            {"I'll go away.#0","I'll come in#1"}}  
-    }
+            {"I'll go away.#0","I'll come in#1"}}, 
 
     },
 
-    dustbin_level3 = {
+    trash_can = {
+        {"Hello, please don't put me on fire. I have a wife and kids",
+            {"I would if I could, dustbin. Sadly I don't have any matches.#2","I would never do such a horrific thing#3"}},
+        {"You frighten me arcinist!",{"Now if you excuse me I have a ticket to catch!#0"}},
+        {"Some people are monsters.#0",{"Not me, I'm nice and stuff, bye#0"}},
+    },
+
+    trash_can2 = {
         {"Hello, please don't put me on fire. I have a wife and kids",
             {"I won't put you on fire (put on fire)#3","You will burn (put on fire)#2"}},
 
@@ -101,26 +98,21 @@ return {
             {"Proceed to put on fire#4"}},
 
         {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
-            {"There's nothing you can say now, it's bin a pleasure knowing you.#0","I will trash you#0","<Refuse to make a pun about such a serious situation>#5"}}}
+            {"There's nothing you can say now, it's bin a pleasure knowing you.#0","I will trash you#0","<Refuse to make a pun about such a serious situation>#5"}},
 
         {"OH PLEASE, IVE BIN A GOOD BIN",
             {"I hate puns, burn!!!#0","Nice pun, burn!#0"}},
+    },
 
     ticket = {
         {"I'm sooooooooooo tiread of travelling with that stupid agent",
-            {"He isn't that stupid!","Is he an agent?","Preaching to the quire sister!"}},
+            {"He isn't that stupid!#2","Is he an agent?#2","Preaching to the quire sister!#4"}},
+        {"Look at the name on this ticket, is it the same name he gave you\nhe cant' even keep track of his aliases!",
+            {"Maybe he forgot his name?#4","Do you want to come with me#3","Ill be on my way!#0"}},
+        {"What is two plus three?",
+            {"It's 5#-1","Bye#0"}},
+        {"Can I come with you?",
+            {"Yes#-1","Bye#0"}},
 
-        {"Please.... I am merely a bin collecting paper. Don't do this to me...",
-            {"Proceed to put on fire#4"}},
-
-        {"Oh thank you, you are a kind soul",
-            {"Proceed to put on fire#4"}},
-
-        {"WAIT, NO NO NO NO. I'LL TELL YOU WHAT YOU NEED TO KNOW. PLEASE ANYTHING!",
-            {"There's nothing you can say now, it's bin a pleasure knowing you.#0","I will trash you#0","<Refuse to make a pun about such a serious situation>#5"}}}
-
-        {"OH PLEASE, IVE BIN A GOOD BIN",
-            {"I hate puns, burn!!!#0","Nice pun, burn!#0"}},
-    
-    ]]
+    },
 }
