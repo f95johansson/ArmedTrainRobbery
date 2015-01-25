@@ -33,7 +33,7 @@ end
 function train:init()
     self.level = 2
     self.player = Entity:new (100,100, media.image.player)
-    local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man, 0)
+    local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man, media.sound['ticket_man_theme'])
     local x, y = unpack(specs.ticker_man_paths[1][1])
     self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[1])
     self.entities = {} 
@@ -42,10 +42,11 @@ function train:init()
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' and name ~= 'ticket_man2' then
             local action = actions[name]
+            local character
             if media.sound[name .. '_theme'] then
-                local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. 'theme'])
+                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, media.sound[name .. '_theme'])
             else
-                local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent, 0)
+                character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent)
             end
             local x, y = unpack(specs.position[name])
             self.entities[name] = Entity:new(x, y, media.image[name], character, specs.level[name])

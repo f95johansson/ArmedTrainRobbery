@@ -40,6 +40,9 @@ function dialog:enter(previous_state)
     self:setArmTimerL()
     self.pop_raius = love.graphics.getWidth()/2
     self.pop_timer = Timer.tween(.8, self, {pop_raius = 0}, 'linear')
+    if self.character.song then
+        self.character.song:play()
+    end
 end
 
 function dialog:setArmTimerR()
@@ -75,6 +78,10 @@ function dialog:leave()
     Timer.cancel(self.timer)
     Timer.cancel(self.arm_timer_l)
     Timer.cancel(self.arm_timer_r)
+    if self.character.song  then
+        self.character.song:stop()
+        media.sound['main_theme']:play()
+    end 
 end
 
 
