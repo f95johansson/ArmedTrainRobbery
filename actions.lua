@@ -7,7 +7,6 @@ return {
     end,
 
     closet = function()
-        print('hidden')
         hidden = true
     end,
 

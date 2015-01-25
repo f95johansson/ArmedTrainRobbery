@@ -12,8 +12,9 @@ return {
         chef = {424,112},
         closet = {54,414},
         driver = {280,256},
+        --driver2 = {280,256},
         ticket = {150,124},
-        bird_lover = {450,100},
+        bird_man = {622,365},
         go_hide = {443, 107},
     },
     level = {
@@ -22,8 +23,9 @@ return {
         trashcan = 1,
         closet = 2,
         driver = 3,
+        driver2 = 3,
         ticket = 1,
-        bird_lover = 2,
+        bird_man = 2,
         go_hide = 2,
     },
     ticket_man_paths = {

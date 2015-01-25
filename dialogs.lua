@@ -86,7 +86,7 @@ return {
     },
 
 
-    driver2 = {
+    --[[driver2 = {
 
         {"...Hello..goodmorning..",
             {"You look sleepy#2","Goodmorning to you aswell#3"}},
@@ -99,7 +99,7 @@ return {
 
         {"I'm to tired to tell you... Please get some coffee for me!",
             {"Here you go#-1"}},
-    },
+    },]]
 
     chef = {
         {"Hello! Can I get you something?",

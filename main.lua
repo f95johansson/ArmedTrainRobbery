@@ -30,6 +30,7 @@ function love.load()
     time = 0
 
     hidden = false
+    ticket = false
     matches = false
     coffee = false
     media.sound['main_theme']:setLooping(true)

@@ -70,6 +70,7 @@ function train:enter()
 end
 
 function train:update(dt)
+
     self:movePlayer(dt)
     self.rail1:update(dt)
 
@@ -198,7 +199,6 @@ function train:check_collision(x, y, player)
         return true
     elseif x > collision_map:getWidth() and player then
         self.level = self.level+1
-        print(self.level)
         self.player.x = 50
         return true
     elseif x < 0 or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight() then

@@ -72,6 +72,18 @@ image = {
     driver_right_arm = love.graphics.newImage('/resources/1x1.png'),
     driver_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
 
+    driver2 = love.graphics.newImage('/resources/gohide_icon.png'),
+    driver2_nose = nil,
+    driver2_left_arm = love.graphics.newImage('/resources/1x1.png'),
+    driver2_right_arm = love.graphics.newImage('/resources/1x1.png'),
+    driver2_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
+
+    bird_man = love.graphics.newImage('/resources/gohide_icon.png'),
+    bird_man_nose = nil,
+    bird_man_left_arm = love.graphics.newImage('/resources/1x1.png'),
+    bird_man_right_arm = love.graphics.newImage('/resources/1x1.png'),
+    bird_man_dialog = love.graphics.newImage('/resources/lokdrivwake.png'),
+
 },
 
 font = {
