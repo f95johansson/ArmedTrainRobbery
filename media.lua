@@ -76,6 +76,10 @@ sound = {
     agent_theme = love.audio.newSource("sound/agent.ogg"),
     ticket_man_theme = love.audio.newSource("sound/conductor.ogg"),
     driver_theme = love.audio.newSource("sound/driver.ogg"),
+    voice1 = love.audio.newSource("sound/voice1.mp3"),
+    voice2 = love.audio.newSource("sound/voice2.mp3"),
+    voice3 = love.audio.newSource("sound/voice3.mp3"),
+    agent_voice = love.audio.newSource("sound/voice3.mp3"),
 
 },
 
