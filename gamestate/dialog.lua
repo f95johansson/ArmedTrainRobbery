@@ -9,6 +9,7 @@ local class = require 'lib.middleclass'
 local Gamestate = require 'lib.hump.gamestate'
 local Timer = require 'lib.hump.timer'
 local Character = require 'class.Character'
+local Layer = require 'class.Layer'
 
 -- Gamestate
 local dialog = {}
@@ -30,6 +31,9 @@ function dialog:enter(previous_state)
     self.dialog_size = 100
     self.question_size = 0
     self.question_timer = Timer.tween(#self.character.text[self.dialog_number][1]/18, self, {question_size = #self.character.text[self.dialog_number][1]}, 'linear')
+
+    self.paralax = {Layer:new(0, 0, media.image.paralax4, 220), Layer:new(0, 0, media.image.paralax3, 200),
+                    Layer:new(0, 0, media.image.paralax2, 180), Layer:new(0, 0, media.image.paralax1, 160)}
 
     self:setTimer()
     self:setArmTimerR()
@@ -75,11 +79,17 @@ end
 
 
 function dialog:update(dt)
+    for _, paralax in ipairs(self.paralax) do
+        paralax:update(dt)
+    end
 end
 
 function dialog:draw()
     love.graphics.setFont(media.font.f18)
 
+    for _, paralax in ipairs(self.paralax) do
+        paralax:draw()
+    end
     love.graphics.draw(media.image[self.character.background], 0, 0)
 
     local cx = love.graphics.getWidth()-self.character.image:getWidth()

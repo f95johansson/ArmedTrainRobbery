@@ -10,6 +10,7 @@ local Gamestate = require 'lib.hump.gamestate'
 local Character = require 'class.Character'
 local Entity = require 'class.Entity'
 local TicketMan = require 'class.TicketMan'
+local Layer = require 'class.Layer'
 local Timer = require 'lib.hump.timer'
 
 -- Gamestate
@@ -31,7 +32,7 @@ function train:init()
     self.level = 2
     self.player = Entity:new (100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
-    self.ticket_man = TicketMan:new(100, 239, media.image.ticket_man, ticket_character)
+    self.ticket_man = TicketMan:new(40, 239, media.image.ticket_man, ticket_character)
     self.entities = {} 
     media.sound.walk:setVolume(0.6)
 
@@ -47,6 +48,8 @@ function train:init()
     self.focus = nil -- the character you want to talk to
     time = 2 * 60
 
+    self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
+
     self.ticket_man:startWalking(1)
 end
 
@@ -56,6 +59,7 @@ end
 
 function train:update(dt)
     self:movePlayer(dt)
+    self.rail1:update(dt)
 
     -- Check for collision line against player
     if self.ticket_man.moving and self.ticket_man.seen == false then
@@ -76,6 +80,7 @@ function train:update(dt)
 end
 
 function train:draw()
+    self.rail1:draw()
 
     love.graphics.push()
     love.graphics.translate(love.graphics.getWidth()/2-media.image['level' .. self.level]:getWidth()/2, 

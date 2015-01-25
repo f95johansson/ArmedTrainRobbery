@@ -2,6 +2,14 @@ return {
 
 image = {
     temp_background = love.graphics.newImage('/resources/temp_bg.png'),
+    background = love.graphics.newImage('/resources/bak1.png'),
+    paralax1 = love.graphics.newImage('/resources/bak1a.png'),
+    paralax2 = love.graphics.newImage('/resources/bak1b.png'),
+    paralax3 = love.graphics.newImage('/resources/bak1c.png'),
+    paralax4 = love.graphics.newImage('/resources/bak1d.png'),
+    grass_bg = love.graphics.newImage('/resources/grass.png'),
+
+
     player = love.graphics.newImage('/resources/player.png'),
     ticket_man = love.graphics.newImage('/resources/ticket_man.png'),
     ticket_man_dialog = love.graphics.newImage('/resources/ticket_man_dialog.png'),
