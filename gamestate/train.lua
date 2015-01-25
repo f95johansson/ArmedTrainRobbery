@@ -34,12 +34,13 @@ function train:init()
     self.level = 2
     self.player = Entity:new (100,100, media.image.player)
     local ticket_character = Character:new(dialogs.ticket_man, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
-    self.ticket_man = TicketMan:new(40, 239, media.image.ticket_man, ticket_character)
+    local x, y = unpack(specs.ticker_man_paths[1][1])
+    self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[1])
     self.entities = {} 
     media.sound.walk:setVolume(0.6)
 
     for name, dialog in pairs(dialogs) do
-        if name ~= 'ticket_man' then
+        if name ~= 'ticket_man' and name ~= 'ticket_man2' then
             local action = actions[name]
             local character = Character:new(dialog, media.image[name .. '_dialog'], media.image[name .. '_nose'], media.image[name .. '_left_arm'], media.image[name .. '_right_arm'], specs.nose_pos[name], agent)
             local x, y = unpack(specs.position[name])
@@ -49,11 +50,11 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 20--2 * 60
+    time = 2 * 60
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
-    self.ticket_man:startWalking(1)
+    self.ticket_man:startWalking(2)
 end
 
 function train:enter()
@@ -66,7 +67,6 @@ function train:update(dt)
 
     -- Check for collision line against player
     if self.ticket_man and self.ticket_man.moving and self.ticket_man.seen == false then
-        print(2)
         local angle = math.angle(self.ticket_man.x, self.ticket_man.y, self.player.x, self.player.y)
         local collision = {}
         for i = 1, 40 do
@@ -83,7 +83,13 @@ function train:update(dt)
 
     if self.ticket_man and self.ticket_man.moving == false then
         self.ticket_man = nil
-        Timer.add(time, function() self.ticket_man = TicketMan:new(40, 239, media.image.ticket_man, ticket_character) end)
+        Timer.add(time, function() 
+                local x, y = unpack(specs.ticker_man_paths[2][1])
+                local ticket_character = Character:new(dialogs.ticket_man2, media.image.ticket_man_dialog, media.image.ticket_man_nose, media.image['ticket_man' .. '_left_arm'], media.image['ticket_man' .. '_right_arm'], specs.nose_pos.ticket_man)
+                self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticker_man_paths[2]) 
+                self.ticket_man:startWalking(w)
+            end)
+
     end
 end
 
@@ -144,7 +150,7 @@ function train:movePlayer(dt)
     local collision = {}
     for i = 1, 16 do
         local angle = 2*math.pi/16 * (i-1)
-        table.insert(collision, self:check_collision(new_x + (self.player.width/2-3)*math.cos(angle), new_y + (self.player.height/2-3)*math.sin(angle)))
+        table.insert(collision, self:check_collision(new_x + (self.player.width/2-3)*math.cos(angle), new_y + (self.player.height/2-3)*math.sin(angle), true))
     end
 
     if not table.contains(collision, true) then
@@ -154,18 +160,20 @@ function train:movePlayer(dt)
 
 end
 
-function train:check_collision(x, y)
+function train:check_collision(x, y, player)
     local collision_map = media.image['mask' .. self.level]
 
-    if x < 0  then --or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight()
+    if x < 0 and player then --or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight()
         self.level= math.clamp(1, self.level-1, 3)
         local map = media.image['level' .. self.level]
         self.player.x = map:getWidth() - 50
         return true
-    elseif x > collision_map:getWidth() then
+    elseif x > collision_map:getWidth() and player then
         self.level = math.clamp(1, self.level+1, 3)
         print(self.level)
         self.player.x = 50
+        return true
+    elseif x < 0 or x > collision_map:getWidth() then
         return true
     end
 

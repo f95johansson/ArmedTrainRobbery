@@ -3,7 +3,7 @@ local Timer = require 'lib.hump.timer'
 
 local TicketMan = class ('TicketMan')
     
-function TicketMan:initialize(x,y,img, character)
+function TicketMan:initialize(x,y,img, character, path)
     self.x = x
     self.y = y
     self.image = img
@@ -14,16 +14,7 @@ function TicketMan:initialize(x,y,img, character)
     self.looking = false
     self.seen = false
 
-    self.path = {
-        --{0, 239},
-        {96, 239},
-        {113, 91},
-        {96, 239},
-        {299, 239},
-        {297, 90},
-        {299, 239},
-        {654, 242},
-    }
+    self.path = path
 end
 
 function TicketMan:draw()

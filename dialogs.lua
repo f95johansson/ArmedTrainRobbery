@@ -7,6 +7,13 @@ return {
         {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
         {"You don't seem to have any money!", {"About that..can I ride for free instead#4","My ticket is in the other coupé#2"}},
     },
+    ticket_man2 = {
+        {'Do you have the ticket?', {'Do you have the ticket?#2'}},
+        {'Of course not, I work here', {'I work here to#3'}},
+        {"No you don't", 
+            {"No YOU don't#0",
+            "Ok, you cought me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
+    },
     agent = {
         {"Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.\n(Whispers smooth to himself)",
             {'Hello, do you have a spare ticket?#2'}},
