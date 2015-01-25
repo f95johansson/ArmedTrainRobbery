@@ -37,8 +37,8 @@ function dialog:enter(previous_state)
         self.character.voice:play()
     end 
 
-    self.paralax = {Layer:new(0, 0, media.image.paralax4, 220), Layer:new(0, 0, media.image.paralax3, 200),
-                    Layer:new(0, 0, media.image.paralax2, 180), Layer:new(0, 0, media.image.paralax1, 160)}
+    self.paralax = {Layer:new(0, 0, media.image.paralax4, 340), Layer:new(0, 0, media.image.paralax3, 360),
+                    Layer:new(0, 0, media.image.paralax2, 380), Layer:new(0, 0, media.image.paralax1, 400)}
 
     self:setTimer()
     self:setArmTimerR()
