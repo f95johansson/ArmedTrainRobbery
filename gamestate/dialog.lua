@@ -212,7 +212,15 @@ function dialog:keypressed(key, isrepeat)
             if self.character.voice then
                 self.character.voice:stop()
             end 
-            Gamestate.switch(into)
+            Gamestate.switch(gamestate.intro)
+            local temp_intro = gamestate.intro
+            package.loaded['gamestate.dialog'] = nil
+            package.loaded['gamestate.train'] = nil
+            gamestate = {
+                intro = temp_intro,
+                dialog = require 'gamestate.dialog',
+                train = require 'gamestate.train',
+            }
         else
             self.question_size = 1
             if not(self.character.voice) then
