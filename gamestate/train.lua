@@ -61,6 +61,7 @@ function train:init()
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
     self.ticket_man:startWalking(2)
+    media.sound['main_theme']:play()
 end
 
 function train:enter()
