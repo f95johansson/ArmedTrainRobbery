@@ -35,6 +35,8 @@ image = {
     chef_right_arm = love.graphics.newImage('/resources/kokhandR.png'),
     chef_dialog = love.graphics.newImage('/resources/kok.png'),
     chef_nose = love.graphics.newImage('/resources/kokhatt.png'),
+
+    trashcan = love.graphics.newImage('/resources/trash_can.png'),
 },
 
 font = {

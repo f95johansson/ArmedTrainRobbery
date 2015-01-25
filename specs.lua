@@ -11,6 +11,7 @@ return {
         closet = {54,256},
         driver = {280,256},
         ticker = {114,95},
+        bird_lover = {450,100},
     },
     level = {
         agent = 1,
@@ -19,6 +20,7 @@ return {
         closet = 2,
         driver = 3,
         ticket = 1,
+        bird_lover = 2,
     },
     ticker_man_paths = {
         {
