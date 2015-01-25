@@ -110,6 +110,15 @@ function train:draw()
         self.ticket_man:draw()
     end
     love.graphics.pop()
+    -- See the trains on the side
+    if self.level ~= 1 then
+        love.graphics.draw (media.image['level' .. (self.level-1)],-600,
+                            love.graphics.getHeight()/2-media.image['level' .. (self.level-1)]:getHeight()/2)
+    end 
+    if self.level ~= 3 then
+        love.graphics.draw (media.image['level' .. (self.level+1)], love.graphics.getWidth()-100, 
+                            love.graphics.getHeight()/2-media.image['level' .. (self.level+1)]:getHeight()/2)
+    end 
 end
 
 function train:keypressed(key, isrepeat)
