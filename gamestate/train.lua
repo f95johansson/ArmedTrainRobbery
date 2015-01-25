@@ -37,7 +37,7 @@ function train:init()
     local x, y = unpack(specs.ticket_man_paths[1][1])
     self.ticket_man = TicketMan:new(x, y, media.image.ticket_man, ticket_character, specs.ticket_man_paths[1])
     self.entities = {} 
-    media.sound.walk:setVolume(0.6)
+    media.sound.walk:setVolume(0.07)
 
     for name, dialog in pairs(dialogs) do
         if name ~= 'ticket_man' and name ~= 'ticket_man2' and name ~= 'ticket_man3' then
@@ -56,7 +56,7 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 2 * 60
+    time = 20--2 * 60
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
@@ -73,7 +73,8 @@ function train:update(dt)
     self.rail1:update(dt)
 
     -- Check for collision line against player
-    if self.ticket_man and self.ticket_man.moving and self.ticket_man.seen == false then
+    if self.ticket_man and not hidden and self.ticket_man.moving and self.ticket_man.seen == false then
+        print(1)
         local angle = math.angle(self.ticket_man.x, self.ticket_man.y, self.player.x, self.player.y)
         local collision = {}
         for i = 1, 100 do
@@ -160,7 +161,7 @@ function train:movePlayer(dt)
         new_y = self.player.y + speed*dt
     end
     if (self.player.x ~= new_x or self.player.y ~= new_y) and not media.sound.walk:isPlaying() then
-        Timer.addPeriodic (0.3, function() media.sound.walk:play() end,1 )
+        Timer.addPeriodic (0.00000001, function() media.sound.walk:play() end,1 )
     end
 
     local collision = {}
@@ -193,7 +194,7 @@ function train:check_collision(x, y, player)
         print(self.level)
         self.player.x = 50
         return true
-    elseif x < 0 or x > collision_map:getWidth() then
+    elseif x < 0 or x > collision_map:getWidth() or y < 0 or y > collision_map:getHeight() then
         return true
     end
 

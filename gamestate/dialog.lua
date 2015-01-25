@@ -122,7 +122,7 @@ function dialog:draw()
 end
 
 function dialog:drawDialog()
-    love.graphics.setColor(100, 100, 100)
+    love.graphics.setColor(30, 30, 30)
     local size = self.dialog_size
     love.graphics.rectangle('fill', 0, love.graphics.getHeight()-size, love.graphics.getWidth(), size)
     

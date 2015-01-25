@@ -12,7 +12,7 @@ return {
         {'Of course not, I work here', {'I work here to#3'}},
         {"No you don't", 
             {"No YOU don't#0",
-            "Ok, you cought me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
+            "Ok, you caught me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
     },
     agent = {
         {"Can I help you? By the way I'm Bond, Jam- I mean. I'm Smith, John Smith.\n(Whispers smooth to himself)",
@@ -57,26 +57,30 @@ return {
 
     },
     closet = {
-        {"Yikes! close the closet! We're hiding from the conductor!", {"Do you have room for one more?#2","Oh, lets close that door then.#0","Whats your favourite pizza?#3"}},
+        {"Yikes! close the closet! I'm hiding from the conductor!", {"Oh, lets close that door then.#0","Whats your favourite pizza?#3"}},
         
-        {"Yes just hurry up and get in!", {"Ok!#0"}},
+        {"Yes just hurry up and get in!", {"Ok!#-1"}},
 
-        {"There is no time to talk about pizza", {"Ok I'll close the door!#0","Why aren't there any toilets on this train?#4","Sometimes when I look up at the stars I'm reminded of how small we are#6"}},
-
-        {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
-            {"Ok I'll leave you alone!#0","But there are several beds in this train#4","Sometime if I look up the star it\nreminds me that we are so\nsmall.#7"}},
+        {"There is no time to talk about pizza", {"Ok I'll close the door!#0","Why aren't there any toilets on this train?#4","Sometimes when I look up at the stars\n      I'm reminded of how small we are.#6"}},
 
         {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
-            {"Ok I'll leave you alone!#0","Can I get in?#1","But there are several beds in this train#6","Sometime if I look up the star it\nreminds me that we are so\nsmall.#7"}},
+            {"Ok I'll leave you alone!#0","But why are there several beds in this train#4","Sometimes when I look up at the stars\n     I'm reminded of how small we are.#7"}},
+
+        {"I don't know, mayby people don't need one beacuse\nthe train does not go very far\nnow please close the door",
+            {"Ok I'll leave you alone!#0","But there are several beds in this train#6","Sometime if I look up the star it\nreminds me that we are so\nsmall.#7"}},
 
         {"That is a very good point, if I let you in would you please stop talking!",
             {"I'll go away instead.#0","Yes please#1"}},
 
         {"What, this is no time for poetry, please close the door",
-            {"If you don't accept my poetry you don't accept me. Bye!#0","Can I come inside#1","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}},
+            {"If you don't accept my poetry you don't accept me. Bye!#0","But you know, our action really matters even though we are small\n beacuse together we are big!#8"}},
 
         {".......Come into the closet or go away",
-            {"I'll go away.#0","I'll come in#1"}}, 
+            {"I'll go away.#0","I'll come in#1"}},
+
+        {"No way this is my hiding place",
+            {"I'll go away.#0","Whats your favourite pizza?#3"}}, 
+
 
     },
 
@@ -105,14 +109,17 @@ return {
     },
 
     ticket = {
-        {"I'm sooooooooooo tiread of travelling with that stupid agent",
-            {"He isn't that stupid!#2","Is he an agent?#2","Preaching to the quire sister!#4"}},
+        {"I'm sooooooooooo tired of travelling with that stupid agent",
+            {"He isn't that stupid!#2","Is he an agent?#2","Preaching to the quire sister!#6"}},
         {"Look at the name on this ticket, is it the same name he gave you\nhe cant' even keep track of his aliases!",
             {"Maybe he forgot his name?#4","Do you want to come with me#3","Ill be on my way!#0"}},
-        {"What is two plus three?",
-            {"It's 5#-1","Bye#0"}},
-        {"Can I come with you?",
+        {"Hmm, if you can answer this question.\nWhat is two plus three?",
+            {"It's 5#4","Trick question!!#5","Bye#0"}},
+        {"You seem smarter then that agent,\ncan I come with you?",
             {"Yes#-1","Bye#0"}},
-
+        {"Oh my god, what has happend to the educational system!?",
+            {"Trick question again!#6","Bye#0"}},
+        {"I can't deal with all this stupid people,\n if only I had legs and could run away free.",
+            {"Hmm..two plus three.. Is it five!#4","Bye#0"}},
     },
 }
