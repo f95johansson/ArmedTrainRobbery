@@ -4,15 +4,16 @@ return {
             {"It's in the other coupé#2", "I don't have one#3"}},
         {'You have one minutes to find it', {'Ok#0'}},
         {'Do you intend to pay for one then?!', {"With cash#5","I thought maybe I could ride for free#4"}},
-        {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
+        {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Oh darn it#-2'}},
         {"You don't seem to have any money!", {"About that..can I ride for free instead#4","My ticket is in the other coupé#2"}},
     },
     ticket_man2 = {
-        {'Do you have the ticket?', {'Do YOU have the ticket?#2'}},
-        {'Of course not, I work here', {'I work here to#3',"Oh I thought you really liked "}},
+        {'Do you have the ticket?', {'Do YOU have the ticket?#2',"It's lost somewhere.#4"}},
+        {'Of course not, I work here', {'I work here to#3',"Oh I thought you really liked looking at tickets!#4"}},
         {"No you don't", 
-            {"No YOU don't#0",
-            "Ok, you caught me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#0"}},
+            {"No YOU don't#3",
+            "Ok, you caught me. I'm a space alien from Omikron 1 and I'm travelled back in time to kill a kid#4"}},
+        {"I gave you a minute, NOW GET OUT OF MY TRAIN", {"Oh darn it#-2"}},
     },
 
     agent = {
@@ -115,7 +116,7 @@ return {
             {"20$!? I don't have that kind of money!#3","I don't need anything#0"}},
 
         {"Well... I'll cut you a deal. If you can guess how many coffee beans\nare in the jar to the left of me\nI'll give you some free coffee if you guess correctly.",
-            {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},
+            {"Easy, it's 27#4","I have no idea#6","I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte that the proportion\nof integers of beans the vessel containsm is merely the number thirtyfour#5"}},
 
         {"Nope! That's the wrong answer, try again!\nHow many beans are there in the jar",{"I don't wanna guess#0","Obviously, the resolution to your bone of contention is the riposte\nthat the proportion of integers of beans the vessel contains\nis merely the number thirtyfour#5"}},
         {"Correct! Here have some coffee!",{"Oh thank you#-1"}},
