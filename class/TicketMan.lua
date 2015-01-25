@@ -39,6 +39,7 @@ function TicketMan:startWalking( path_number, step )
                     self:startWalking(path_number, step + 1)
                 else
                     self.moving = false
+                    
                 end
             end)
 end

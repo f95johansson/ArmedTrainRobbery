@@ -49,7 +49,7 @@ function train:init()
 
 
     self.focus = nil -- the character you want to talk to
-    time = 2 * 60
+    time = 20--2 * 60
 
     self.rail1 = Layer:new(0, 0, media.image.grass_bg, 300)
 
@@ -65,7 +65,8 @@ function train:update(dt)
     self.rail1:update(dt)
 
     -- Check for collision line against player
-    if self.ticket_man.moving and self.ticket_man.seen == false then
+    if self.ticket_man and self.ticket_man.moving and self.ticket_man.seen == false then
+        print(2)
         local angle = math.angle(self.ticket_man.x, self.ticket_man.y, self.player.x, self.player.y)
         local collision = {}
         for i = 1, 40 do
@@ -80,6 +81,10 @@ function train:update(dt)
         end
     end
 
+    if self.ticket_man and self.ticket_man.moving == false then
+        self.ticket_man = nil
+        Timer.add(time, function() self.ticket_man = TicketMan:new(40, 239, media.image.ticket_man, ticket_character) end)
+    end
 end
 
 function train:draw()
@@ -95,7 +100,9 @@ function train:draw()
         end 
     end
     self.player:draw()
-    self.ticket_man:draw()
+    if self.ticket_man then
+        self.ticket_man:draw()
+    end
     love.graphics.pop()
 end
 
@@ -115,7 +122,7 @@ function train:walkSound()
 end
 
 function train:movePlayer(dt)
-    if self.ticket_man.moving then
+    if self.ticket_man and self.ticket_man.moving then
         return
     end
     local new_x = self.player.x
