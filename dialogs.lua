@@ -2,7 +2,7 @@ return {
     ticket_man = {
         {'Hello, Tickets please!', 
             {"It's in the other coupé#2", "I don't have one#3"}},
-        {'You have two minutes to find it', {'Ok#0'}},
+        {'You have one minutes to find it', {'Ok#0'}},
         {'Do you intend to pay for one then?!', {"With cash#5","I thought maybe I could ride for free#4"}},
         {'FOR FREE?!?!?!?!? NOT ON MY TRAIN! OUT!', {'Game over#1'}},
         {"You don't seem to have any money!", {"About that..can I ride for free instead#4","My ticket is in the other coupé#2"}},
@@ -52,6 +52,24 @@ return {
 
     },
 
+    bird_man = {
+
+        {"Hello young chicken.",
+            {"Do you have any matches#2","I'm not a chicken, bye#0"}},
+
+        {"Yes but children shouldn't be playing with matches. \nThey are in my backpocket",
+            {"What's that behind you!!!#3","Look an elephant!!#3","Is that a grey goose outside the window!!#4"}},
+
+        {"I'm not so easily fooled young chicken.",
+            {"What's that behind you!!!#3","Look an elephant!!#3","Is that a grey goose outside the window!!#4"}},
+
+        {"<turnes around and you take the matches>",
+            {"Bye#-1"}},
+
+
+
+    },
+
     driver = {
 
         {"...Hello..goodmorning..",
@@ -65,10 +83,22 @@ return {
 
         {"I'm to tired to tell you... Please get some coffee for me!",
             {"Ok#0"}},
+    },
 
 
+    driver2 = {
 
+        {"...Hello..goodmorning..",
+            {"You look sleepy#2","Goodmorning to you aswell#3"}},
 
+        {"Well the ticket man keeps waking me up to ask what the code for the safe is.",
+            {"Isn't it dangrous to sleep when you're driving a train!#3","Oh i won't bother you then#0","What's the safe code?#4"}},
+
+        {"No, we don't really do anything,\nI just glued this steering wheel on to look important.",
+            {"Ok#0","What's the safe code?#4"}},
+
+        {"I'm to tired to tell you... Please get some coffee for me!",
+            {"Here you go#-1"}},
     },
 
     chef = {
