@@ -156,7 +156,7 @@ function dialog:drawDialog()
         if self.selected == i then
             love.graphics.setColor(255, 255, 255)
         else
-            love.graphics.setColor(200, 200, 200)
+            love.graphics.setColor(120, 120, 120)
         end
         love.graphics.print(answer, 15, love.graphics.getHeight()-self.dialog_size+5 + 30*(i-1))
     end
