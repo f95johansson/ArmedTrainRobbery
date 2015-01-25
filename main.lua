@@ -34,6 +34,9 @@ function love.load()
     hidden = false
     matches = false
     coffee = false
+    media.sound['main_theme']:setLooping(true)
+    media.sound['intro_theme']:setLooping(true)
+
 
 
     Gamestate.registerEvents()
