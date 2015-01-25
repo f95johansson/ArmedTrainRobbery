@@ -205,6 +205,14 @@ function dialog:keypressed(key, isrepeat)
             end 
             self.character.action()
             Gamestate.switch(self.previous_state)
+        elseif self.dialog_number == -2 then
+            for i=1,3 do
+                media.sound['voice' .. i]:stop()
+            end
+            if self.character.voice then
+                self.character.voice:stop()
+            end 
+            Gamestate.switch(into)
         else
             self.question_size = 1
             if not(self.character.voice) then
